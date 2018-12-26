@@ -24,7 +24,7 @@ body {
     .single-main {
       display: block;
       .l-single-container {
-        background: #fff;
+        background: $white;
         width: 700px;
         margin: 0 auto;
       }
@@ -54,7 +54,7 @@ body {
         }
         .buy-content {
           padding: 24px 12.5% 0;
-          border-top: 1px solid #f5f5f5;
+          border-top: 1px solid $border-color;
           &:last-of-type {
             padding: 40px 12.5%;
           }
@@ -120,7 +120,7 @@ body {
             button {
               background: $red;
               border: 1px solid $red;
-              color: #fff;
+              color: $white;
               margin: 16px 0 0;
               width: 320px;
               height: 53px;

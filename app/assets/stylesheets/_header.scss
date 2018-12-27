@@ -26,19 +26,24 @@ body{
           height: 36px;
           padding: 9px 32px 9px 8px;
           background: #fafafa;
-          border-radius: 4px;
+          border-radius: 4px 0 0 4px / 4px 0 0 4px;
           border: 1px solid #ccc;
-          line-height: 1.5;
+          line-height: 30px;
           font-size: 16px;
+          border-right: hidden;
         }
-        i.fas.fa-search{
-          top: 0px;
-          right: 0px;
-          width: 36px;
-          line-height: 36px;
-          cursor: pointer;
-          text-align: center;
-        }
+      }
+      i.fas.fa-search{
+        top: 0px;
+        right: 0px;
+        width: 36px;
+        line-height: 36px;
+        cursor: pointer;
+        text-align: center;
+        background: #fafafa;
+        border-radius: 0 4px 4px 0/ 0 4px 4px 0;
+        border: 0.7px solid #ccc;
+        border-left: hidden;
       }
     }
     &__nav-box{

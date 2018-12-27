@@ -8,18 +8,18 @@ body{
   color: #333;
   line-height: 1;
 }
-header{
+.header{
   background-color: #fff;
-  .pc-header-inner{
+  &__inner{
     width: 1150px;
     margin: 0 auto;
     padding: 8px 0 0;
-    .clearfix{
+    &__flex{
       display: flex;
-      h1.l-left{
+      &__left{
         margin-right: 15px;
       }
-      .form{
+      &__right-form{
         width: calc(100% - (134px + 16px));
         .input-default{
           width: 100%;
@@ -41,32 +41,30 @@ header{
         }
       }
     }
-    .pc-header-nav-box.clearfix{
+    &__nav-box{
       display: flex;
       justify-content: space-between;
       margin-top: 10px;
-      .l-left{
-        ul.pc-header-nav{
+      &__left{
+        &__item-nav{
           display: flex;
           list-style: none;
           li{
             padding: 0 0 0 16px;
-            h2{
-              .pc-header-nav-root{
-                text-decoration: none;
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 1.4;
-                color: #333;
-                height: 38px;
-                line-height: 32px;
-              }
+            .header-nav-root{
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 1.4;
+              color: #333;
+              height: 38px;
+              line-height: 32px;
             }
           }
         }
       }
-      .l-right{
-        ul.pc-header-user-nav{
+      &__right{
+        &__user-nav{
           list-style: none;
           li{
             display: inline-block;
@@ -81,7 +79,6 @@ header{
               line-height: 32px;
               i.far.fa-bell{
                 font-size: 17px;
-                // display: inline-block;
                 speak: none;
                 font-style: normal;
                 font-weight: 400;
@@ -98,12 +95,12 @@ header{
                 vertical-align: middle;
               }
             }
-            .sp-header-user-icon{
+            .header-user-icon{
               display:flex;
               figure{
                 width: 32px;
                 height: 32px;
-                div.icon{
+                .icon{
                   transform: translate(30px, -10px);
                 }
               }

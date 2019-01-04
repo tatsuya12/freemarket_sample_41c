@@ -115,13 +115,13 @@
           line-height: 1.4;
         }
         a {
-          text-decoration:none;
+          text-decoration: none;
         }
         a:hover {
-          text-decoration:underline;
+          text-decoration: underline;
         }
         &__fix {
-          color: #0099e8;
+          color: $blue;
           display: block;
           text-align: right;
         }

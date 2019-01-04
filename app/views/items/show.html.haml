@@ -1,16 +1,16 @@
-%body
-  .single-container
-    = render 'pheader'
+.single-container
+  = render 'purchase_header'
 
-    %main.single-main
-      %section.l-single-container.buy-item-container
-        %h2.l-single-head 購入を確定しますか？
-        %section.buy-content.buy-item
-          .buy-content__inner
-            %h3.buy-content__image
-              %img.lazyload{src: "https://kinarino.k-img.com/system/press_eye_catches/000/028/244/9c3d64a668a3f2cdda8e47747e461d64e9bfed4a.jpg?1482226279"}/
-            %p.buy-item__name.bold
-              半袖シャツ
+  %main.single-main
+    %section.l-single-container.buy-item-container
+      %h2.l-single-head 購入を確定しますか？
+      %section.buy-content.buy-item
+        .buy-content__inner
+          %h3.buy-content__image
+            %img.lazyload{src: "https://kinarino.k-img.com/system/press_eye_catches/000/028/244/9c3d64a668a3f2cdda8e47747e461d64e9bfed4a.jpg?1482226279"}/
+          %p.buy-item__name.bold
+            半袖シャツ
+          %form.buy-content__form{action: "/", method: "POST"}
             .buy-price-ja
               ¥ 800
               %span.item-shipping-fee.f14.bold 送料込み
@@ -25,33 +25,33 @@
                   %span
                     ¥ 800
             %button.btn-default.btn-red.bold{type: "submit"} 購入する
-        %section.buy-content.buy-user-info
-          .buy-content__inner
-            %h3 配送先
-            %address.buy-user-info__text
-              〒111-1234
-              %br/
-              東京都 港区西麻布
-              １－１ー１
-              六本木ヒルズ 3033号室
-              %br/
-              西川 明宏
-            %p.buy-user-info__text
-            = link_to root_path, class: "buy-user-info__fix" do
-              %span 変更する
-              %i.fa.fa-angle-right
-        %section.buy-content.buy-user-info
-          .buy-content__inner
-            %h3 支払い方法
-            %p.buy-user-info__text
-              ************1234
-              %br/
-              08 / 22
-              %figure
-                %img{height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?4136293187", width: "34"}/
-            = link_to root_path, class: "buy-user-info__fix" do
-              %span 変更する
-              %i.fa.fa-angle-right
+      %section.buy-content.buy-user-info
+        .buy-content__inner
+          %h3 配送先
+          %address.buy-user-info__text
+            〒111-1234
+            %br/
+            東京都 港区西麻布
+            １－１ー１
+            六本木ヒルズ 3033号室
+            %br/
+            西川 明宏
+          %p.buy-user-info__text
+          %a.buy-user-info__fix{href: "https://www.mercari.com/jp/transaction/address/m99125354295/?_s=U2FsdGVkX1_C4m-yb0YIxNI4csOJMwTo--cVuHo9H8Wt1P_HJwZFwi0YKif02V1JRw_wFwWu5h-ZpUks2PY2n4tl4Aqfki7pRRAA5fU8rSbN2X_OAxODbnbYl7bVyjN-"}
+            %span 変更する
+            %i.fa.fa-angle-right
+      %section.buy-content.buy-user-info
+        .buy-content__inner
+          %h3 支払い方法
+          %p.buy-user-info__text
+            ************1234
+            %br/
+            08 / 22
+            %figure
+              %img{alt: "master-card", height: "20", src: "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?4136293187", width: "34"}/
+          %a.buy-user-info__fix{href: "https://www.mercari.com/jp/transaction/select_card/m99125354295/?_s=U2FsdGVkX1_C4m-yb0YIxNI4csOJMwTo--cVuHo9H8Wt1P_HJwZFwi0YKif02V1JRw_wFwWu5h-ZpUks2PY2n4tl4Aqfki7pRRAA5fU8rSbN2X_OAxODbnbYl7bVyjN-"}
+            %span 変更する
+            %i.fa.fa-angle-right
 
-    = render 'pfooter'
+  = render 'purchase_footer'
 

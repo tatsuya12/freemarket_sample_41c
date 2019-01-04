@@ -5,6 +5,9 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def detail
+  end
+
   def user_confirmation
   end
 end

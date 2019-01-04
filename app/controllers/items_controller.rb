@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   def logout
   end
   
-  def 
   def detail
   end
 

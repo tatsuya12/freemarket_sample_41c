@@ -1,0 +1,51 @@
+= render "header"
+.top-main
+  #slider
+    #sld_area
+      #sld1.sld
+        .sld1.sld__visual
+          .sld1-moji
+            %h2
+              スマホでかんたん
+              フリマアプリ
+            %p
+              メルカリはスマホカメラからすぐに出品できる
+              %br
+              購入時も安心な独自システムのアプリです
+            .top-main-visual-store.clearfix
+            .pull-left
+              =link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank" do
+                =image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?4136293187")
+
+            .pull-left
+              =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank" do
+                =image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?4136293187")
+          %img{alt: "", height: "100%", src: "https://www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?4136293187", width: "500"}
+
+      #sld2.sld
+        .sld2.sld__visual
+      #sld3.sld
+        .sld3.sld__visual
+      #sld4.sld
+        .sld4.sld__visual
+    #sld_nav
+    %a#sld_prev.sld_dir_btn &lt;
+    %a#sld_next.sld_dir_btn &gt;
+
+
+  %section.pickup-container
+    %h2.pickup-head
+      ピックアップカテゴリー
+    = render partial: "top-OneRow"
+    %h2.pickup-head
+      ピックアップブランド
+    = render partial: "top-OneRow"
+
+
+  %section.pickup-container
+  .footer-sell-btn
+    .footer-sell-btn__wrapper
+      %div 出品
+      %i.fa.fa-camera
+= render "app-banner"
+= render "footer"

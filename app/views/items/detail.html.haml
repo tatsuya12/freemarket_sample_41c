@@ -1,0 +1,207 @@
+= render 'header'
+
+%section.item-box-container.l-single-container
+  %h1.item-name 乃木坂46 齋藤飛鳥 ポストカード カレンダー2019
+  .item-main-content.clearfix
+    .item-photo
+      .owl-carousel
+        .owl-item-inner
+          %img.owl-lazy{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70903223243_1.jpg?1545797586"}/
+
+    %table.item-detail-table
+      %tr
+        %th 出品者
+        %td
+          = link_to "tomomo", root_path
+          .item-rates
+            .item-rates__ratings
+              = fa_icon ('smile-o'), class: 'smile-pink'
+              %span 451
+            .item-rates__ratings
+              = fa_icon ('meh-o'), class: 'meh-orange'
+              %span 7
+            .item-rates__ratings
+              = fa_icon ('frown-o'), class: 'frown-blue'
+              %span 1
+      %tr
+        %th カテゴリー
+        %td
+          = link_to "おもちゃ・ホビー・グッズ", root_path
+          = link_to root_path do
+            .item-detail-table-sub-category
+              = fa_icon( 'angle-right', text: " タレントグッズ", class: 'fa-fw' )
+          = link_to root_path do
+            .item-detail-table-sub-sub-category
+              = fa_icon( 'angle-right', text: " アイドル", class: 'fa-fw' )
+      %tr
+        %th ブランド
+        %td
+      %tr
+        %th 商品の状態
+        %td 新品、未使用
+      %tr
+        %th 配送料の負担
+        %td 送料込み(出品者負担)
+      %tr
+        %th 配送の方法
+        %td 普通郵便(定形、定形外)
+      %tr
+        %th 配送元地域
+        %td
+          = link_to "青森県", root_path
+      %tr
+        %th 発送日の目安
+        %td 2~3日で発送
+
+  .item-price-box.text-center
+    %span.item-price.bold ¥ 500
+    %span.item-tax (税込)
+    %span.item-shipping-fee 送料込み
+  = link_to "購入画面に進む", root_path, class: "item-buy-btn"
+
+
+  .item-description.f14
+    %p.item-description__inner 乃木坂46齋藤飛鳥のポストカードです。
+    即購入⭕️
+    コンビニ支払いの方は購入後、支払いの時間をお伝えください。
+  .item-button-container.clearfix
+    .item-button-left
+      %button.item-button.item-button-like
+        = fa_icon ('heart')
+        %span いいね!
+        %span.fade-in-down 2
+      %button.item-button.item-button-report.clearfix
+        = fa_icon ('flag')
+        %span 不適切な商品の報告
+    .item-button-right
+      = link_to root_path do
+        = fa_icon ('lock')
+        %span あんしん・あんぜんへの取り組み
+
+
+
+.item-detail-message
+  .message-container
+    .message-content
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.textarea-default{name: "body", type: "text", value: ""}
+      %button.message-submit.btn-default.btn-gray{type: "submit"}
+        %span コメントする
+
+.nav-item-link-prev-next.clearfix
+  %ul
+    %li.nav-item-link-prev
+      = link_to root_path do
+        = fa_icon( 'angle-left', text: " トミカ 宇和島バス", class: 'fa-fw' )
+    %li.nav-item-link-next
+      = link_to root_path do
+        = fa_icon( 'angle-right', text: " KISS  オリジナル デニムトートバッグ", class: 'fa-fw', right: true)
+
+.item-social-media-box
+  .text-center
+    .fb-save
+  %ul.social-media-box
+    %li.social-media-box__icon
+      = link_to root_path do
+        = fa_icon ('facebook-f'), class: 'fa-3x facebook'
+    %li.social-media-box__icon
+      = link_to root_path do
+        = fa_icon ('twitter'), class: 'fa-3x twitter'
+    %li.social-media-box__icon
+      = link_to root_path do
+        = fa_icon ('pinterest'), class: 'fa-3x pinterest'
+
+.items-in-user-profile
+  %h2.items-box-head
+    = link_to 'tomomoさんのその他の出品', root_path
+  .items-box-content.clearfix
+    %section.items-box
+      = link_to(root_path, class: 'items-link') do
+        .items-box__photo
+          %img{ src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m56649475567_1.jpg?1545799634"}/
+        .items-box__body
+          %h3.items-box-name.font-2 乃木坂46 カレンダー 2019 タイプA
+          .items-box-num.clearfix
+            .items-box-price
+              ¥ 3,222
+              %p.item-box-tax (税込)
+            .items-box-likes
+              %i.fa.fa-heart
+              %span 3
+
+    %section.items-box
+      = link_to(root_path, class: 'items-link') do
+        .items-box__photo
+          %img.lazyload{ src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m56649475567_1.jpg?1545799634"}/
+        .items-box__body
+          %h3.items-box-name.font-2 乃木坂46 カレンダー 2019 タイプA
+          .items-box-num.clearfix
+            .items-box-price
+              ¥ 3,222
+              %p.item-box-tax (税込)
+            .items-box-likes
+              %i.fa.fa-heart
+              %span 3
+
+    %section.items-box
+      = link_to(root_path, class: 'items-link') do
+        .items-box__photo
+          %img.lazyload{ src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m56649475567_1.jpg?1545799634"}/
+        .items-box__body
+          %h3.items-box-name.font-2 乃木坂46 カレンダー 2019 タイプA
+          .items-box-num.clearfix
+            .items-box-price
+              ¥ 3,222
+              %p.item-box-tax (税込)
+            .items-box-likes
+              %i.fa.fa-heart
+              %span 3
+
+.items-in-user-profile
+  %h2.items-box-head
+    = link_to "アイドル （おもちゃ・ホビー・グッズ） その他の商品", root_path
+  .items-box-content.clearfix
+    %section.items-box
+      = link_to(root_path, class: 'items-link') do
+        .items-box__photo
+          %img.lazyload{ src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m56649475567_1.jpg?1545799634"}/
+        .items-box__body
+          %h3.items-box-name.font-2 乃木坂46 カレンダー 2019 タイプA
+          .items-box-num.clearfix
+            .items-box-price
+              ¥ 3,222
+              %p.item-box-tax (税込)
+            .items-box-likes
+              %i.fa.fa-heart
+              %span 3
+
+    %section.items-box
+      = link_to(root_path, class: 'items-link') do
+        .items-box__photo
+          %img.lazyload{ src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m56649475567_1.jpg?1545799634"}/
+        .items-box__body
+          %h3.items-box-name.font-2 乃木坂46 カレンダー 2019 タイプA
+          .items-box-num.clearfix
+            .items-box-price
+              ¥ 3,222
+              %p.item-box-tax (税込)
+            .items-box-likes
+              %i.fa.fa-heart
+              %span 3
+
+    %section.items-box
+      = link_to(root_path, class: 'items-link') do
+        .items-box__photo
+          %img.lazyload{ src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m56649475567_1.jpg?1545799634"}/
+        .items-box__body
+          %h3.items-box-name.font-2 乃木坂46 カレンダー 2019 タイプA
+          .items-box-num.clearfix
+            .items-box-price
+              ¥ 3,222
+              %p.item-box-tax (税込)
+            .items-box-likes
+              %i.fa.fa-heart
+              %span 3
+
+= render 'app-banner'
+= render 'footer'

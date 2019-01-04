@@ -1,18 +1,5 @@
-// body {
-//   position: relative;
-//   min-height: 100%;
-//   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-//   font-size: 14px;
-//   color: rgb(51, 51, 51);
-//   line-height: 1;
-//   background: rgb(245, 245, 245);
-// }
-
 .l-single-container {
-  // background: $white;
   width: 700px;
-  // // margin: 0 auto;
-  // padding: 24px 40px 40px;
   .item-name {
     font-size: 24px;
     text-align: center;
@@ -47,7 +34,6 @@
       }
     }
     .item-detail-table {
-      // float: right;
       max-width: 300px;
       height: 375px;
       margin: 0 auto;
@@ -66,6 +52,7 @@
   .item-price-box {
     text-align: center;
     margin: 24px 0 0;
+    color: $text-color;
     .item-price {
       margin: 0 16px 0 0;
       font-size: 50px;
@@ -196,7 +183,7 @@
 
 .item-social-media-box {
   margin: 70px auto 24px;
-  padding: 32px 0 24px;
+  padding-bottom: 24px;
   width: 780px;
   background: $white;
   .text-center {
@@ -256,7 +243,7 @@
     margin: 0 auto;
     .items-box-content {
       padding: 0;
-      margin: 0 auto;
+      margin: 0 auto 40px;
       width: auto;
       overflow-x: auto;
       overflow-y: hidden;
@@ -272,19 +259,10 @@
           height: 220px;
           overflow: hidden;
           position: relative;
-           width: 220px;
-          .lazyload {
-            width: 220px;
-            height: 100%;
-            top: 50%;
-            transform: translate(0, -50%);
-            position: absolute;
-          }
+          width: 220px;
         }
         &__body {
         padding: 16px;
-        // height: 110px;
-        // margin: 0 20px 0 0;
         background-color: $white;
         .items-box-name {
           display: block;
@@ -325,14 +303,14 @@
   &__ratings {
     display: inline-block;
     margin: 8px 0 0 16px;
-    .laugh-pink {
-      color: #FA58F4;
+    .smile-pink {
+      color: $smile-pink;
     }
     .meh-orange {
-      color: #FAAC58;
+      color: $meh-orange;
     }
     .frown-blue {
-      color: #58ACFA;
+      color: $frown-blue;
     }
   }
   :first-child {
@@ -377,7 +355,7 @@ span {
   margin: 24px 0 8px;
   font-size: 22px;
   line-height: 1.4;
-   display: block;
+  display: block;
 }
 
 

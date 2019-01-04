@@ -1,3 +1,5 @@
+= render 'header'
+
 %section.item-box-container.l-single-container
   %h1.item-name 乃木坂46 齋藤飛鳥 ポストカード カレンダー2019
   .item-main-content.clearfix
@@ -13,7 +15,7 @@
           = link_to "tomomo", root_path
           .item-rates
             .item-rates__ratings
-              = fa_icon ('smile-o'), class: 'laugh-pink'
+              = fa_icon ('smile-o'), class: 'smile-pink'
               %span 451
             .item-rates__ratings
               = fa_icon ('meh-o'), class: 'meh-orange'
@@ -116,7 +118,7 @@
     %section.items-box
       = link_to(root_path, class: 'items-link') do
         .items-box__photo
-          %img.lazyload{ src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m56649475567_1.jpg?1545799634"}/
+          %img{ src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m56649475567_1.jpg?1545799634"}/
         .items-box__body
           %h3.items-box-name.font-2 乃木坂46 カレンダー 2019 タイプA
           .items-box-num.clearfix
@@ -200,3 +202,6 @@
             .items-box-likes
               %i.fa.fa-heart
               %span 3
+
+= render 'app-banner'
+= render 'footer'

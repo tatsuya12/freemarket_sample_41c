@@ -7,4 +7,7 @@ class ItemsController < ApplicationController
 
   def detail
   end
+
+  def user_confirmation
+  end
 end

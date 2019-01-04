@@ -73,6 +73,9 @@ li {
   height: 39px;
   margin-right: 40px;
   margin-left: 68px;
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .mypage-item-text {
@@ -111,6 +114,12 @@ time {
   line-height: 56px;
 }
 
+.mypage-tab-head {
+  background: #fafafa;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: bold;
+}
 ul {
   list-style: none;
 }

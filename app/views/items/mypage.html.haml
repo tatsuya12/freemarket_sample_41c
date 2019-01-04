@@ -78,13 +78,13 @@
       %a{:href => "/jp/mypage/notification/"} 一覧を見る
   %ul#mypage-tab-todo.mypage-item-list.tab-pane
 /     %li.mypage-item-not-found.bold 現在、やることリストはありません
-/ %section.mypage-tab-container
-/   %h2.mypage-tab-head 購入した商品
-/   %ul.mypage-tabs
-/     %li.active
-/       %h3
-/         %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-now"}
-/           取引中
+%section.mypage-tab-container
+  %h2.mypage-tab-head 購入した商品
+  %ul.mypage-tabs
+    %li.active
+      %h3
+        %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-now"}
+          取引中
 /     %li
 /       %h3
 /         %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-old"}
@@ -128,5 +128,9 @@
 /           %i.icon-arrow-right
 /     %li.mypage-go-list
 /       %a{:href => "/jp/mypage/purchased/"} 一覧を見る
+.footer-sell-btn
+  .footer-sell-btn__wrapper
+    %div 出品
+    %i.fa.fa-camera
 = render "app-banner"
 = render "footer"

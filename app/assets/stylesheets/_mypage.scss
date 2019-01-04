@@ -1,0 +1,116 @@
+.mypage-user-icon {
+  height: 200px;
+  padding: 20px;
+  background: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?40116333);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+.bold {
+  font-weight: bold;
+}
+
+.mypage-number {
+  display: flex;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.mypage-tab-container-notification-todo {
+  background-color: #fff;
+}
+
+.mypage-tabs {
+    background: #eee;
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 16px;
+    line-height: 72px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tab-content {
+  width: 700px;
+  height: 505px;
+}
+
+.tab-pane {
+  display: block;
+}
+
+.active {
+  display: flex;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  width: 350px;
+  height:74px;
+  border-top: 2px solid #ea352d;
+}
+
+.mypage-item-link {
+	width: 668px;
+	height: 48px;
+    display: block;
+    min-height: 80px;
+    padding: 16px;
+    color: #333;
+    display: flex;
+}
+
+.lazyloaded {
+  width: 48px;
+  height: 48px;
+}
+
+.mypage-item-body {
+  width: 560px;
+  height: 39px;
+  margin-right: 40px;
+  margin-left: 68px;
+}
+
+.mypage-item-text {
+  overflow: hidden;
+  display: -webkit-box;
+  max-height: 4.4em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+time {
+  color: #888;
+  a:link {
+    text-decoration: none;
+  } 
+}
+
+.fa-chevron-right {
+  padding-top: 15px;
+  a:link {
+    text-decoration: none;
+  }  
+  
+}
+
+.mypage-go-list {
+  width: 668px;
+  height: 56px;
+  padding: 16px;
+  background-color: #eee;
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 56px;
+}
+
+ul {
+  list-style: none;
+}

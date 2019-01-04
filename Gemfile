@@ -66,3 +66,4 @@ gem "font-awesome-rails"
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'pry-stack_explorer'
+gem 'devise'

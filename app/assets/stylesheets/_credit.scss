@@ -1,41 +1,57 @@
-.l-chapter-sub-head {
-  width: 320px;
-  font-size: 16px;
-  font-weight: bold;
-}
-.l-single-content {
-  width: 320px;
-  height: 50px;
-  padding-right: 126px;
-  padding-left: 126px;
-}
-.settings-add-card {
-  width: 572px;
-  height: 58px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #eee;
-}
-.l-single-content {
-  max-width: 320px;
-  margin: 0 auto;
-}
-.btn-default {
-
-}
-.icon-card {
-  width: 17.5px;
-  height: 14px;
-  margin-right: 16px;
-  color: #000000;
-  font-size: 14px;
-}
-.settings-not-regist {
-  width: 572px;
-  height: 16px;
-  color: $blue;
-  text-align: right;
-}
-%i.icon-arrow-right {
-  color: $blue;
+.l-content {
+  width: 700px;
+  height: 100%;
+  .l-chapter-container {
+    .l-chapter-head {
+      font-weight: bold;
+      font-size: 24px;
+      padding: 8px 24px;
+      border-bottom: 1px solid $border-color;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .l-single-inner {
+      padding: 64px;
+      border-top: 1px solid $border-color;
+      .l-single-content {
+        max-width: 320px;
+        margin: 0 auto;
+        .l-chapter-sub-head {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+      &:last-of-type {
+        height: 300px;
+      }
+    }
+    .settings-add-card {
+      padding: 24px 0;
+      border-bottom: 1px solid $form-frame;
+      margin-bottom: 8px;
+      .submit_button {
+        margin: 0;
+        background: $red;
+        border: 1px solid $red;
+        color: $white;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        .card {
+          margin-right: 16px;
+        }
+      }
+    }
+    .settings-not-regist {
+      display: block;
+      margin: 40px 0 0;
+      text-align: right;
+    }
+  }
 }

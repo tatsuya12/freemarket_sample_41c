@@ -18,13 +18,8 @@ get 'items/user_confirmation' => 'items#user_confirmation'
  end
   get 'items/detail' => 'items#detail'
   get 'items/show' => 'items#show'
-<<<<<<< HEAD
-resources :items
-
-=======
   get 'items/credit' => 'items#credit'
   get 'items/credit_detail' => 'items#credit_detail'
   resources :items
->>>>>>> master
 end
 

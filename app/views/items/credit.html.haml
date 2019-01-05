@@ -1,0 +1,22 @@
+= render 'header'
+%main.l-container
+  = render 'side-bar'
+  .l-content
+    %section.l-chapter-container
+      %h2.l-chapter-head 支払い方法
+      .l-single-inner
+        %section
+          .l-single-content
+            %h3.l-chapter-sub-head クレジットカード一覧
+          %ul.settings-payment-list
+        %section.settings-add-card
+          .l-single-content
+            = link_to(root_path, class: 'submit_button') do
+              = fa_icon( 'credit-card', text: " クレジットカードを追加する", class: 'fa-fw card' )
+        .settings-not-regist
+          = link_to root_path do
+            = fa_icon( 'angle-right', text: "支払い方法について", class: 'fa-fw', right: true)
+
+= render 'camera-button'
+= render 'app-banner'
+= render 'footer'

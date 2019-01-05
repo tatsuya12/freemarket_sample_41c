@@ -11,6 +11,12 @@ class ItemsController < ApplicationController
   def detail
   end
 
+  def credit
+  end
+
+  def credit_detail
+  end
+
   def user_confirmation
   end
 end

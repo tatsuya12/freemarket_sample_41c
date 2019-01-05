@@ -17,6 +17,6 @@ class ItemsController < ApplicationController
   def user_confirmation
   end
 
-  def prifiel
+  def profile
   end
 end

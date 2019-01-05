@@ -1,3 +1,8 @@
+.l-content section:hover {
+  opacity: 0.8;
+}
+
+
 .mypage-user-icon {
   height: 200px;
   padding: 20px;
@@ -5,6 +10,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+    img {
+      border-radius: 50%;
+      margin-top: 10px;
+    }
 }
 
 li {
@@ -12,12 +21,15 @@ li {
 }
 .bold {
   font-weight: bold;
+  color: $text-color;
 }
 
 .mypage-number {
   display: flex;
-  font-size: 14px;
-  margin-top: 8px;
+  font-size: 16px;
+  margin-top: 12px;
+  display: inline-block;
+  text-align: center;
 }
 
 .mypage-tab-container-notification-todo {
@@ -25,14 +37,12 @@ li {
 }
 
 .mypage-tabs {
-    background: #eee;
-    position: relative;
-    display: block;
-    color: #333;
-    font-size: 16px;
-    line-height: 72px;
-    font-weight: bold;
-    text-align: center;
+  background-color: #eee;
+  position: relative;
+  display: block;
+  color: $text-color;
+  font-size: 16px;
+  line-height: 72px;
 }
 
 .tab-content {
@@ -40,17 +50,83 @@ li {
   height: 505px;
 }
 
-.tab-pane {
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/2);
+  height: 74px;
+  border-top: 2px solid #eee;
+  line-height: 74px;
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+/*購入した商品のタブのスタイル*/
+.t-tab_item {
+  width: calc(100%/2);
+  height: 74px;
+  border-top: 2px solid #eee;
+  line-height: 74px;
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="t-tab_item"] {
+  display: none;
+}
+
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  background-color: #fff;
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+#news:checked ~ #news_content,
+#to-do:checked ~ #to-do_content {
+  display: block;
+}
+/*選択されているタブのコンテンツのみを表示*/
+#treading:checked ~ #treading_content,
+#treaded:checked ~ #treaded_content {
   display: block;
 }
 
-.active {
-  display: flex;
-  display: list-item;
-  text-align: -webkit-match-parent;
-  width: 350px;
-  height:74px;
-  border-top: 2px solid #ea352d;
+/*選択されているタブのスタイルを変える*/
+.mypage-tabs input:checked + .tab_item {
+  background-color: #fff;
+  color: $text-color;
+  border-top: 2px solid $red;
+}
+
+/*選択されているタブのスタイルを変える*/
+.mypage-tabs input:checked + .t-tab_item {
+  background-color: #fff;
+  color: $text-color;
+  border-top: 2px solid $red;
 }
 
 .mypage-item-link {
@@ -112,6 +188,15 @@ time {
   margin: 0 auto;
   text-align: center;
   line-height: 56px;
+}
+
+
+.merukariicon {
+  text-align: center;
+}
+.mypage-item-not-found.bold {
+  text-align: center;
+  color: #ccc;
 }
 
 .mypage-tab-head {

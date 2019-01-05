@@ -1,0 +1,41 @@
+.l-chapter-sub-head {
+  width: 320px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.l-single-content {
+  width: 320px;
+  height: 50px;
+  padding-right: 126px;
+  padding-left: 126px;
+}
+.settings-add-card {
+  width: 572px;
+  height: 58px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eee;
+}
+.l-single-content {
+  max-width: 320px;
+  margin: 0 auto;
+}
+.btn-default {
+
+}
+.icon-card {
+  width: 17.5px;
+  height: 14px;
+  margin-right: 16px;
+  color: #000000;
+  font-size: 14px;
+}
+.settings-not-regist {
+  width: 572px;
+  height: 16px;
+  color: $blue;
+  text-align: right;
+}
+%i.icon-arrow-right {
+  color: $blue;
+}

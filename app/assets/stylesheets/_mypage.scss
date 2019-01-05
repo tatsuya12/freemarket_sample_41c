@@ -34,6 +34,12 @@ li {
 
 .mypage-tab-container-notification-todo {
   background-color: #fff;
+  margin-bottom: 50px;
+}
+
+.mypage-tab-container-notification-tread {
+  background-color: #fff;
+  margin-bottom: 50px;
 }
 
 .mypage-tabs {
@@ -180,14 +186,17 @@ time {
 }
 
 .mypage-go-list {
-  width: 668px;
-  height: 56px;
+  background-color: #fff;
   padding: 16px;
-  background-color: #eee;
   list-style: none;
   margin: 0 auto;
   text-align: center;
   line-height: 56px;
+  &-link {
+      width: 668px;
+      height: 56px;
+      background-color: #eee;
+    }
 }
 
 
@@ -201,7 +210,8 @@ time {
 
 .mypage-tab-head {
   background: #fafafa;
-  font-size: 16px;
+  padding-left: 16px;
+  font-size: 18px;
   line-height: 72px;
   font-weight: bold;
 }

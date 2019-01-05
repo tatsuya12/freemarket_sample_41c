@@ -22,9 +22,8 @@
         #news_content.tab_content
           %li
             .mypage-item-link
-              =link_to ""
-              %figure
-                %img.lazyloaded{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+              =link_to root_path do
+                =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png")
               .mypage-item-body
                 .mypage-item-text 【終了間近】年末年始のお得なプレゼントキャンペーン開催中！
                 %time
@@ -78,8 +77,8 @@
             現在、やることリストはありません
       
       %li.mypage-go-list
-        %a{:href => "/jp/mypage/notification/"} 一覧を見る
-    / %ul#mypage-tab-todo.mypage-item-list.tab-pane
+        .mypage-go-list-link
+          =link_to "一覧を見る", "/jp/mypage/purchased/"
    
     %section.mypage-tab-container
       %h2.mypage-tab-head 購入した商品
@@ -100,37 +99,38 @@
                 %a.mypage-item-link{:href => "https://www.mercari.com/jp/transaction/order_status/m492100228/"}
                   %figure
                     %img.lazyload{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m492100228_1.jpg?1469066046"}/
-              .mypage-item-body
-                .mypage-item-text
+                .mypage-item-body
+                  .mypage-item-text
                   「【SALE】ヴィダルサスーン コテ 25mmマイナスイオンヘアアイロン 海外対応」 を購入しました。
-                %span 取引が完了しました
-                .mypage-item-status.bold.done
+                  %span 取引が完了しました
+                  .mypage-item-status.bold.done
                   取引完了
-              %i.icon-arrow-right
+                %i.icon-arrow-right
               %li
                 %a.mypage-item-link{:href => "https://www.mercari.com/jp/transaction/order_status/m615895437/"}
                   %figure
                     %img.lazyload{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m615895437_1.jpg?1476378490"}/
-              .mypage-item-body
-                .mypage-item-text
+                .mypage-item-body
+                  .mypage-item-text
                   「clathas財布」 を購入しました。
-                .mypage-item-status.bold.done
-                %span 取引が完了しました
-                取引完了
-              %i.icon-arrow-right
-    %li
-      %a.mypage-item-link{:href => "https://www.mercari.com/jp/transaction/order_status/m926884174/"}
-        %figure
-          %img.lazyload{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m926884174_1.jpg?1459661149"}/
-        .mypage-item-body
-    /       .mypage-item-text
-    /         「香水 セット！！」 を購入しました。
-    /         %span 取引が完了しました
-    /       .mypage-item-status.bold.done
-    /         取引完了
-    /         %i.icon-arrow-right
-      / %li.mypage-go-list
-      /   %a{:href => "/jp/mypage/purchased/"} 一覧を見る
+                  .mypage-item-status.bold.done
+                  %span 取引が完了しました
+                  取引完了
+                %i.icon-arrow-right
+              %li
+                %a.mypage-item-link{:href => "https://www.mercari.com/jp/transaction/order_status/m926884174/"}
+                  %figure
+                    %img.lazyload{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m926884174_1.jpg?1459661149"}/
+                .mypage-item-body
+                  .mypage-item-text
+                  香水 セット！！」 を購入しました。
+                  %span 取引が完了しました
+                  .mypage-item-status.bold.done
+                  取引完了
+                %i.icon-arrow-right
+        %li.mypage-go-list
+          .mypage-go-list-link
+            =link_to "一覧を見る", "/jp/mypage/purchased/"
   .footer-sell-btn
     .footer-sell-btn__wrapper
       %div 出品

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'items/show' => 'items#show'
   get 'items/credit' => 'items#credit'
   get 'items/credit_detail' => 'items#credit_detail'
+  get 'items/profiel' => 'items#profiel'
   resources :items
 end
 

@@ -4,7 +4,10 @@ class ItemsController < ApplicationController
 
   def show
   end
-
+  
+  def logout
+  end
+  
   def detail
   end
 

@@ -47,6 +47,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+   gem 'dotenv-rails'
 end
 
 group :development do
@@ -69,3 +70,6 @@ gem 'pry-stack_explorer'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'gretel'

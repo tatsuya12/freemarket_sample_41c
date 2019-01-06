@@ -70,7 +70,7 @@
       }
     }
   }
-    &__sign-up-header{
+  &__sign-up-header{
     height: 128px;
     text-align: center;
     display: flex;
@@ -149,19 +149,22 @@
         font-size: 22px;
         line-height: 1.5;
         text-align: center;
+        font-weight: bold;
       }
-      &__form{
+      form{
         padding: 64px;
         border-top: 1px solid $border-color;
+      }
+      &__form{
         &__content{
           max-width: 320px;
           margin: 0 auto;
-          &__form-group:first-child{
+          &__group:first-child{
             margin: 0;
           }
-          &__form-group{
+          &__group{
             margin: 40px 0 0;
-            label{
+            &__label{
               font-weight: 600;
               display: inline-block;
             }
@@ -172,9 +175,9 @@
               border-radius: 2px;
               color: #fff;
               font-size: 12px;
-              vertical-align: top;
+              // vertical-align: top;
             }
-            &__input-default{
+            input{
               width: 100%;
               margin: 8px 0 0;
               height: 48px;

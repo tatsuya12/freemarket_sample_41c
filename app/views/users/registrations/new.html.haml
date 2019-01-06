@@ -1,42 +1,21 @@
-.single-container
-  = render './items/purchase_header'
-  .single-container__main
-    %section.single-container__main__l-single
-      %h2.single-container__main__l-single__head
-        新規会員登録
-      .single-container__main__l-single__inner
-        .single-container__main__l-single__inner__content
-          =link_to "", class: "btn-default btn-mail" do
-            %i.far.fa-envelope
-            メールアドレスで登録
-          %button#facebook-login.btn-default.btn-facebook
-            %i.fab.fa-facebook
-            Facebookで登録
-          %button#google-login.btn-default.btn-google
-            %i.fab.fa-google-plus-g
-            Googleで登録
-  = render './items/purchase_footer'
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "users/shared/links"
+/ .single-container
+/   = render './items/purchase_header'
+/   .single-container__main
+/     %section.single-container__main__l-single
+/       %h2.single-container__main__l-single__head
+/         新規会員登録
+/       .single-container__main__l-single__inner
+/         .single-container__main__l-single__inner__content
+/           =link_to "", class: "btn-default btn-mail" do
+/             %i.far.fa-envelope
+/             メールアドレスで登録
+/           %button#facebook-login.btn-default.btn-facebook
+/             %i.fab.fa-facebook
+/             Facebookで登録
+/           %button#google-login.btn-default.btn-google
+/             %i.fab.fa-google-plus-g
+/             Googleで登録
+/   = render './items/purchase_footer'
 
 .single-container
   .single-container__sign-up-header
@@ -60,31 +39,39 @@
         %li.single-container__sign-up-header__bar__flex__content
           完了
           .single-container__sign-up-header__bar__flex__content__progress-status
+
   %main.single-container__sign-up-main
     %section.single-container__sign-up-main__container
-      %h2.single-container__sign-up-main__container__head 会員情報入力
-      %form.single-container__sign-up-main__container__form{:action => "https://www.mercari.com/jp/signup/sms_confirmation/", :method => "POST", :novalidate => "novalidate"}
-        %input{:name => "__csrf_value", :type => "hidden", :value => "942af58c87358970e4980d76f2f735f9ab235b536c945a733c57ba522cced90ce6ea6f6936cc482ed2b3dd6c11dfedd4e2207cb59d61aa4ade5baa1f7c33492e8"}/
+      %h2.single-container__sign-up-main__container__head
+        会員情報入力
+      .single-container__sign-up-main__container__form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
         .single-container__sign-up-main__container__form__content
-          .single-container__sign-up-main__container__form__content__form-group
-            %label{:for => "nickname"} ニックネーム
-            %span.single-container__sign-up-main__container__form__content__form-group__require 必須
-            %input.single-container__sign-up-main__container__form__content__form-group__input-default{:name => "nickname", :placeholder => "例）メルカリ太郎", :type => "text", :value => ""}/
-          .single-container__sign-up-main__container__form__content__form-group
-            %label{:for => "email"} メールアドレス
-            %span.single-container__sign-up-main__container__form__content__form-group__require 必須
-            %input.single-container__sign-up-main__container__form__content__form-group__input-default{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
-          %input{:name => "login_type", :type => "hidden", :value => ""}/
-          .single-container__sign-up-main__container__form__content__form-group
-            %label{:for => "password"} パスワード
-            %span.single-container__sign-up-main__container__form__content__form-group__require 必須
-            %input.single-container__sign-up-main__container__form__content__form-group__input-default{:name => "password", :placeholder => "6文字以上", :type => "password"}/
-          .single-container__sign-up-main__container__form__content__form-group
-            %label{:for => "password"} パスワード（確認）
-            %span.single-container__sign-up-main__container__form__content__form-group__require 必須
-            %input.single-container__sign-up-main__container__form__content__form-group__input-default{:name => "password2", :placeholder => "6文字以上", :type => "password"}/
-          %input{:name => "after_save_callback", :type => "hidden", :value => ""}/
-          .single-container__sign-up-main__container__form__content__form-group
-            .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-              %iframe{src: "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1545073489967&size=normal&cb=n5hzazh4yje1", width: "304px", height: "78px", role: "presentation",name: "a-h3xm357f4j0s",frameborder: "0",scrolling: "no",sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"}
-          %button.btn-default.btn-red{:type => "submit"} 次へ進む
+          .single-container__sign-up-main__container__form__content__group
+
+            / .single-container__sign-up-main__container__form__content__group__lavel
+            / = f.label :ニックネーム
+            / %span.single-container__sign-up-main__container__form__content__group__require 必須
+            / = f.email_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例）メルカリ太郎"
+
+            .single-container__sign-up-main__container__form__content__group__lavel
+            = f.label :メールアドレス
+            %span.single-container__sign-up-main__container__form__content__group__require 必須
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+          .single-container__sign-up-main__container__form__content__group
+            .single-container__sign-up-main__container__form__content__group__lavel
+            = f.label :パスワード
+            - if @minimum_password_length
+              %em
+                (#{@minimum_password_length} characters minimum)
+            %span.single-container__sign-up-main__container__form__content__group__require 必須
+            = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上"
+          .single-container__sign-up-main__container__form__content__group
+            .single-container__sign-up-main__container__form__content__group__lavel
+            = f.label :パスワード確認
+            %span.single-container__sign-up-main__container__form__content__group__require 必須
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上"
+          = f.submit "次へ進む", class: "btn-default btn-red"
+  / = render "users/shared/links"
+

@@ -4,7 +4,10 @@ class ItemsController < ApplicationController
 
   def show
   end
-
+  
+  def logout
+  end
+  
   def detail
   end
 
@@ -15,5 +18,8 @@ class ItemsController < ApplicationController
   end
 
   def user_confirmation
+  end
+
+  def profile
   end
 end

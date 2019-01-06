@@ -1,7 +1,7 @@
 = render 'header'
 %main.l-container
   = render 'side-bar'
-  .l-content
+  .l-content-mypage
     %section.mypage-user-icon
       %a{href: "https://www.mercari.com/jp/u/209996436/"}
         %figure
@@ -21,52 +21,48 @@
         %label.tab_item{for: "to-do"} やることリスト
         #news_content.tab_content
           %li
-            .mypage-item-link
-              =link_to root_path do
-                =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png")
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
               .mypage-item-body
-                .mypage-item-text 【終了間近】年末年始のお得なプレゼントキャンペーン開催中！
-                %time
+                .mypage-item-text
+                  【終了間近】年末年始のお得なプレゼントキャンペーン開催中！
+                .time
                   %i.fa.fa-bell
                   %span 2 日前
               %i.fa.fa-chevron-right
           %li
-            %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", href: ""}
-              %figure
-                %img.lazyloaded{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
               .mypage-item-body
                 .mypage-item-text お知らせ：お得なキャンペーン始まりました！詳細はこちら
-                %time
+                .time
                   %i.fa.fa-bell
                   %span 3 日前
               %i.fa.fa-chevron-right
           %li
-            %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
-              %figure
-                %img.lazyloaded{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
               .mypage-item-body
                 .mypage-item-text 【5％OFFクーポンをお持ちです！】年末年始もお得にお買い物をお楽しみください♪
-                %time
+                .time
                   %i.fa.fa-bell
                   %span 4 日前
               %i.fa.fa-chevron-right
           %li
-            %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
-              %figure
-                %img.lazyloaded{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
               .mypage-item-body
                 .mypage-item-text 2018年最も取引数の多かったブランドは？メルカリのトレンドをチェック♪
-                %time
+                .time
                   %i.fa.fa-bell
                   %span 6 日前
               %i.fa.fa-chevron-right
           %li
-            %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
-              %figure
-                %img.lazyloaded{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
               .mypage-item-body
                 .mypage-item-text 【あと2日】ファッションアイテムが売れたら“必ず“ポイントがもらえるキャンペーン開催中
-                %time
+                .time
                   %i.fa.fa-bell
                   %span 17 日前
               %i.fa.fa-chevron-right
@@ -79,7 +75,6 @@
       %li.mypage-go-list
         .mypage-go-list-link
           =link_to "一覧を見る", "/jp/mypage/purchased/"
-   
     %section.mypage-tab-container
       %h2.mypage-tab-head 購入した商品
       %section.mypage-tab-container-notification-tread
@@ -96,44 +91,38 @@
           #treaded_content.tab_content
             .tab-content
               %li
-                %a.mypage-item-link{:href => "https://www.mercari.com/jp/transaction/order_status/m492100228/"}
-                  %figure
-                    %img.lazyload{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m492100228_1.jpg?1469066046"}/
-                .mypage-item-body
-                  .mypage-item-text
-                  「【SALE】ヴィダルサスーン コテ 25mmマイナスイオンヘアアイロン 海外対応」 を購入しました。
-                  %span 取引が完了しました
-                  .mypage-item-status.bold.done
-                  取引完了
-                %i.icon-arrow-right
+                =link_to(root_path, class: 'mypage-item-link') do
+                  =image_tag("//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m492100228_1.jpg?1469066046", class: 'lazyloaded')
+                  .mypage-item-body
+                    .mypage-item-text
+                      「【SALE】ヴィダルサスーン コテ25mmマイナスイオンヘアアイロン 海外対応」を購入しました。
+                      %span 取引が完了しました
+                    .mypage-item-status.bold.done
+                      取引完了
+                  %i.icon-arrow-right
               %li
-                %a.mypage-item-link{:href => "https://www.mercari.com/jp/transaction/order_status/m615895437/"}
-                  %figure
-                    %img.lazyload{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m615895437_1.jpg?1476378490"}/
-                .mypage-item-body
-                  .mypage-item-text
-                  「clathas財布」 を購入しました。
-                  .mypage-item-status.bold.done
-                  %span 取引が完了しました
-                  取引完了
-                %i.icon-arrow-right
+                =link_to(root_path, class: 'mypage-item-link') do
+                  =image_tag("//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m615895437_1.jpg?1476378490", class: 'lazyloaded')
+                  .mypage-item-body
+                    .mypage-item-text
+                      「clathas財布」を購入しました。
+                      %span 取引が完了しました
+                    .mypage-item-status.bold.done
+                      取引完了
+                  %i.icon-arrow-right
               %li
-                %a.mypage-item-link{:href => "https://www.mercari.com/jp/transaction/order_status/m926884174/"}
-                  %figure
-                    %img.lazyload{:alt => "", "data-src" => "//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m926884174_1.jpg?1459661149"}/
-                .mypage-item-body
-                  .mypage-item-text
-                  香水 セット！！」 を購入しました。
-                  %span 取引が完了しました
-                  .mypage-item-status.bold.done
-                  取引完了
-                %i.icon-arrow-right
+                =link_to(root_path, class: 'mypage-item-link') do
+                  =image_tag("//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m926884174_1.jpg?1459661149", class: 'lazyloaded')
+                  .mypage-item-body
+                    .mypage-item-text
+                      「香水セット」 を購入しました。
+                      %span 取引が完了しました
+                    .mypage-item-status.bold.done
+                      取引完了
+                  %i.icon-arrow-right
         %li.mypage-go-list
           .mypage-go-list-link
             =link_to "一覧を見る", "/jp/mypage/purchased/"
-  .footer-sell-btn
-    .footer-sell-btn__wrapper
-      %div 出品
-      %i.fa.fa-camera
+  =render "camera-button"
 = render "app-banner"
 = render "footer"

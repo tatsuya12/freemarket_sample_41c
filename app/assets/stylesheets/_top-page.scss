@@ -1,0 +1,247 @@
+#slider{
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+#sld_area{
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;}
+  .sld{
+    width: 100%;
+    height: 390px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    .sld1.sld__visual {
+      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg");
+      height: 430px;
+      width: 100%;
+      background-size: cover;
+      display: flex;
+      color: $text-color;
+      h2 {
+        width: 480px;
+        height: 144px;
+        display: block;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        font-size: 60px;
+        line-height: 1.2;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      }
+      p {
+        width: 480px;
+        height: 64px;
+        font-size: 18px;
+      }
+      img {
+        background-size: 200%;
+      }
+    }
+    .sld1-moji {
+      margin-left: 300px;
+    }
+    .sld2.sld__visual{
+      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei.jpg");
+      height: 430px;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .sld3.sld__visual {
+      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/top-banner-kusanagi.jpg");
+      height: 430px;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .sld4.sld__visual {
+      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/top-banner-welcome.png");
+      height: 430px;
+      width: 100%;
+      background-size: cover;
+      position: absolute;
+      background-position: center;
+    }
+  }
+  #sld_nav{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    text-align: center;
+  }
+  .sld_navi_circle {
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  .sld_navi_circle.current{
+    background: rgba(255,255,255,1);
+  }
+  .sld_dir_btn {
+    background: $white;
+    border-radius: 50%;
+    height: 12px;
+    margin-right: 15px;
+    width: 300px;
+  }
+  .sld_dir_btn:hover{
+    background: rgba(255,255,255,1);}
+    #sld_prev{
+      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/carousel-prev.png");
+
+    }
+    #sld_next{
+      right: 20px;
+    }
+
+    .pickup-container {
+      margin: auto;
+      padding-top: 40px;
+    }
+
+    .pickup-head {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .text-center {
+      a:visited {
+        text-decoration: none;
+        color:  $blue;
+      }
+
+      color: $blue;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      font-size: 22px;
+      margin-top: 26px;
+      margin-right: 11px;
+      margin-bottom: 26px;
+      margin-left: 11px;
+    }
+
+    .items-box-content {
+     display: flex;
+     color: #333;
+     height: 330px;
+     width: 940px;
+     margin: auto;
+     a:link {
+       color: #333;
+     }
+     a:visited {
+       color: #333;
+     }
+     a:hover {
+       color: #333;
+       text-decoration: none;
+     }
+   }
+
+   .items-box {
+    text-align: center;
+    height: 330px;
+    width: 213px;
+    margin-left: 20px;
+    &-photo {
+      width: 206px;
+      height: 213px;
+      &__data {
+      }
+    }
+    &-body {
+      width: 190px;
+      height: 78px;
+      padding: 16px 16px 20px 16px;
+      background-color: $white;
+      z-index: 900;
+    }
+    &-name {
+      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      font-weight: 400;
+      height: 3em;
+      line-height: 1.5;
+      word-break: break-word;
+      white-space: normal;
+      text-align: left;
+    }
+    &-num {
+      width: 181px;
+      height: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-price {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    &-tax {
+      font-size: 10px;
+      clear: both;
+      text-align: left;
+    }
+  }
+
+  .is-higher-height.lazyloaded {
+    width: 107%;
+    height: 100%;
+    vertical-align: inherit;
+  }
+
+
+  .footer-sell-btn {
+    position: fixed;
+    bottom: -14px;
+    right: -14px;
+    z-index: 1000;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: $red;
+    color: $white;
+    text-align: center;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    font-size: 23px;
+    &__wrapper {
+      margin-top: 40px;
+    }
+  }
+
+  .fa {
+    &-camera {
+      font-size: 60px;
+      padding-top: 8px;
+    }
+    &-heart {
+      color: lightgray;
+    }
+  }
+
+
+  .view-all {
+    a:visited {
+      text-decoration: none;
+      color:  $blue;
+    }
+    height: 14px;
+    width: 935px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: right;
+    margin: 0 auto;
+  }

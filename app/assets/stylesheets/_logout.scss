@@ -1,0 +1,35 @@
+.l-content {
+  width: 700px;
+  height: 179px;
+}
+
+.l-chaoter-container {
+  background-color: #fff;
+}
+
+.btn-red {
+  color: $red;
+	
+}
+
+.l-single-inner {
+  width: 572px;
+  height: 50px;
+  padding: 64px;
+}
+
+.l-single-content {
+  max-width: 320px;
+  height: 50px;
+  margin-right: 126px;
+  margin-left: 126px;
+}
+
+.btn-red {
+  width: 318px;
+  height: 48px;
+  border: 1px solid $red;
+  background-color: $red; 
+  color: #fff;
+  font-size: 14px;
+}

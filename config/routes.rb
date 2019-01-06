@@ -17,9 +17,11 @@ get 'items/user_confirmation' => 'items#user_confirmation'
    get "sign_out", :to => "users/sessions#destroy"
  end
   get 'items/detail' => 'items#detail'
+  get 'items/logout' => 'items#logout'
   get 'items/show' => 'items#show'
   get 'items/credit' => 'items#credit'
   get 'items/credit_detail' => 'items#credit_detail'
+  get 'items/profile' => 'items#profile'
   resources :items
 end
 

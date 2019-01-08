@@ -2,12 +2,10 @@
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
-
   # callback for facebook
   def facebook
     callback_for(:facebook)
   end
-
 
   # callback for google
   def google_oauth2
@@ -39,5 +37,4 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
-
 end

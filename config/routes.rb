@@ -8,7 +8,7 @@ get 'items/user_confirmation' => 'items#user_confirmation'
    :sessions => 'users/sessions',
    :passwords => 'users/passwords',
    :confirmations => 'users/confirmations',
-   # :omniauth_callbacks => 'users/omniauth_callbacks',
+   :omniauth_callbacks => 'users/omniauth_callbacks',
    :unlocks => 'users/unlocks'
  }
 

@@ -12,8 +12,8 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
-  validates :name, presence: true
-  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
 
-
+  validates :name, presence: true,length: { maximum: 20 }
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
 end

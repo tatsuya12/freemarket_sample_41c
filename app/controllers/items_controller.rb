@@ -22,4 +22,8 @@ class ItemsController < ApplicationController
 
   def profile
   end
+
+  def sell
+  end
+
 end

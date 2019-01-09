@@ -1,17 +1,31 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "users/shared/links"
+.single-container
+  = render './items/purchase_header'
+  .single-container__main
+    .single-container__main__login-panel
+      .single-container__main__login-panel__no-account
+        %p アカウントをお持ちでない方はこちら
+        =link_to "./sign_up" do
+          新規会員登録
+      .single-container__main__login-panel__inner
+        %button#facebook-login.btn-default.btn-facebook
+          %i.fab.fa-facebook
+          Facebookでログイン
+        %button#google-login.btn-default.btn-google
+          %i.fab.fa-google-plus-g
+          Googleでログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .single-container__main__login-panel__form
+          .single-container__main__login-panel__form__group
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "メールアドレス"
+          .single-container__main__login-panel__form__group
+            %br/
+            = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+          .single-container__main__login-panel__form__group
+            .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
+              %iframe{src: "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1545073489967&size=normal&cb=n5hzazh4yje1", width: "304px", height: "78px", role: "presentation",name: "a-h3xm357f4j0s",frameborder: "0",scrolling: "no",sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"}
+          = f.submit "ログイン", class: "btn-default btn-red"
+          =link_to "" do
+            パスワードをお忘れの方
+=render "./items/purchase_footer"
+

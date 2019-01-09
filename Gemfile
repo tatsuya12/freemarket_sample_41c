@@ -47,8 +47,17 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-   gem 'dotenv-rails'
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
+
 end
+
+# group :test do
+#   gem 'faker'
+# end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

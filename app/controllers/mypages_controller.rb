@@ -14,4 +14,7 @@ class MypagesController < ApplicationController
 
   def logout
   end
+
+  def sign_up_top
+  end
 end

@@ -21,6 +21,9 @@ Rails.application.routes.draw do
       get :profile
       get :logout
     end
+    collection do
+      get :sign_up_top
+    end
   end
 
 

@@ -10,7 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190107033335) do
+ActiveRecord::Schema.define(version: 20190110042805) do
+
+  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "path",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "deliveries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "shipping_charge", null: false
+    t.string   "origin_region",   null: false
+    t.string   "shipping_days",   null: false
+    t.string   "shipping_method", null: false
+    t.integer  "item_id",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["item_id"], name: "index_deliveries_on_item_id", using: :btree
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "image",      limit: 65535, null: false
+    t.integer  "item_id",                  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+  end
+
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                       null: false
+    t.integer  "price",                      null: false
+    t.string   "status",                     null: false
+    t.string   "size"
+    t.string   "condition"
+    t.text     "introduction", limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "brand_id"
+    t.integer  "category_id"
+    t.integer  "delivery_id"
+    t.integer  "buyer_id_id"
+    t.integer  "seller_id_id"
+    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
+    t.index ["buyer_id_id"], name: "index_items_on_buyer_id_id", using: :btree
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
+    t.index ["delivery_id"], name: "index_items_on_delivery_id", using: :btree
+    t.index ["seller_id_id"], name: "index_items_on_seller_id_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
@@ -27,4 +80,11 @@ ActiveRecord::Schema.define(version: 20190107033335) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "deliveries", "items"
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "deliveries"
+  add_foreign_key "items", "users", column: "buyer_id_id"
+  add_foreign_key "items", "users", column: "seller_id_id"
 end

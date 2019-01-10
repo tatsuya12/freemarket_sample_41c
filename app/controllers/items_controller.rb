@@ -7,7 +7,14 @@ class ItemsController < ApplicationController
   end
 
   def detail
-
+    @item = Item.find(params[:id])
   end
+
+
+  # before_create :add_currency
+
+  # def add_currency
+  #   self.price = "¥" + price
+  # end
 
 end

@@ -8,6 +8,7 @@
 
 
 
+
 User.create(name: "テスト１", email: "test@gmail.com", password: "password")
 
 Item.create(name: "アイテム１", price: "15000", status: "", size: "M", condition: "新品、未使用", introduction: "テスト商品紹介")

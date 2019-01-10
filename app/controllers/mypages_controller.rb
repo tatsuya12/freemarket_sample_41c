@@ -17,4 +17,8 @@ class MypagesController < ApplicationController
 
   def sign_up_top
   end
+
+  def show
+  end
+
 end

@@ -1,6 +1,6 @@
-= render 'header'
+= render './items/header'
 %main.l-container
-  = render 'side-bar'
+  = render './items/side-bar'
   .l-content-mypage
     %section.mypage-user-icon
       =link_to root_path do
@@ -123,6 +123,6 @@
         %li.mypage-go-list
           .mypage-go-list-link
             =link_to "一覧を見る", "/jp/mypage/purchased/"
-  =render 'camera-button'
-= render 'app-banner'
-= render 'footer'
+  =render './items/camera-button'
+= render './items/app-banner'
+= render './items/footer'

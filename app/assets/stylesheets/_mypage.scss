@@ -1,0 +1,244 @@
+.l-content-mypage {
+  a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
+
+section.mypage-user-icon {
+  height: 200px;
+  padding: 20px;
+  background: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?40116333);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  img {
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: $text-color;
+    opacity: 0.5;
+  }
+}
+
+li {
+  list-style: none;
+}
+.bold {
+  font-weight: bold;
+  color: $text-color;
+}
+
+.mypage-number {
+  display: flex;
+  color: $text-color;
+  font-size: 16px;
+  margin-top: 12px;
+  display: inline-block;
+  text-align: center;
+}
+
+.mypage-tab-container-notification-todo {
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+
+.mypage-tab-container-notification-tread {
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+
+%section.mypage-tab-container {
+  margin-bottom: 500px;
+}
+.mypage-tabs {
+  background-color: #eee;
+  position: relative;
+  display: block;
+  color: $text-color;
+  font-size: 16px;
+  line-height: 72px;
+}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/2);
+  height: 74px;
+  border-top: 2px solid #eee;
+  line-height: 74px;
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/*購入した商品のタブのスタイル*/
+.t-tab_item {
+  width: calc(100%/2);
+  height: 74px;
+  border-top: 2px solid #eee;
+  line-height: 74px;
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*上のラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*下のラジオボタンを全て消す*/
+input[name="t-tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  background-color: #fff;
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+#news:checked ~ #news_content,
+#to-do:checked ~ #to-do_content {
+  display: block;
+}
+/*選択されているタブのコンテンツのみを表示*/
+#treading:checked ~ #treading_content,
+#treaded:checked ~ #treaded_content {
+  display: block;
+}
+
+/*選択されている上のタブのスタイルを変える*/
+.mypage-tabs input:checked + .tab_item {
+  background-color: #fff;
+  color: $text-color;
+  border-top: 2px solid $red;
+}
+
+/*選択されている下のタブのスタイルを変える*/
+.mypage-tabs input:checked + .t-tab_item {
+  background-color: #fff;
+  color: $text-color;
+  border-top: 2px solid $red;
+}
+
+.mypage-item-link {
+	width: 100%;
+	height: 48px;
+  display: block;
+  padding: 20px 10px 10px 16px;
+  min-height: 80px;
+  color: #333;
+  display: flex;
+  line-height: 48px;
+  border-bottom: 1px solid #eee;
+}
+
+.mypage-item-link:hover {
+  background-color: #f5f5f5;
+  opacity: 0.2;
+}
+.lazyloaded {
+  width: 48px;
+  height: 48px;
+}
+
+.mypage-item-body {
+  width: 500px;
+  height: 60px;
+  margin-right: 40px;
+  margin-left: 38px;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.mypage-item-text {
+  overflow: hidden;
+  display: -webkit-box;
+  max-height: 4.4em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+.time {
+  color: #888;
+}
+
+.fa-chevron-right {
+  padding-top: 15px;
+  a:link {
+    text-decoration: none;
+  }  
+}
+
+.mypage-go-list {
+  background-color: #fff;
+  padding: 16px;
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 56px;
+  &-link {
+    width: 668px;
+    height: 56px;
+    background-color: #eee;
+    a:link {
+      color: $text-color;
+    }
+  }
+}
+
+.merukariicon {
+  margin: 0 auto;
+  width: 80px;
+  height: 65px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.mypage-item-not-found.bold {
+  text-align: center;
+  color: #ccc;
+}
+
+.mypage-item-status.bold.done {
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 5px 6px;
+  color: #fff;
+  background-color: #888;
+}
+
+.mypage-tab-head {
+  background: #fafafa;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 72px;
+  font-weight: bold;
+}
+ul {
+  list-style: none;
+}

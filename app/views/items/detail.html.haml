@@ -9,10 +9,10 @@
           %h3.buy-content__image
             = image_tag "https://kinarino.k-img.com/system/press_eye_catches/000/028/244/9c3d64a668a3f2cdda8e47747e461d64e9bfed4a.jpg?1482226279", class: "lazyload"
           %p.buy-item__name.bold
-            半袖シャツ(@item.name)
+            = @item.name
           %form.buy-content__form{action: "/", method: "POST"}
             .buy-price-ja
-              ¥ 800(@item.price)
+              = @item.price
               %span.item-shipping-fee.f14.bold 送料込み
             %ul.buy-accordion.not-have.bold
               .accordion-toggle
@@ -23,7 +23,7 @@
                   支払い金額
                 .buy-price-cell_b
                   %span
-                    ¥ 800(@item.price)
+                    = @item.price
             %button.btn-default.btn-red.bold{type: "submit"} 購入する
       %section.buy-content.buy-user-info
         .buy-content__inner

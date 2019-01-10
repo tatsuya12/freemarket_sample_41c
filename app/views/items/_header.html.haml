@@ -19,21 +19,31 @@
               %h2
                 =link_to "", class: "header-nav-root" do
                   ブランドから探す
-        .header__inner__nav-box__right
-          %ul.header__inner__nav-box__right__user-nav
-            %li
-              .header-user-icon
-                =link_to "" do
-                  .icon
-                    =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", width: "32")
-                  %div マイページ
-            %li
-              .pc-header-nav-root
-                =link_to "" do
-                  %i.fa.fa-bell
-                  %span お知らせ
-            %li
-              .pc-header-nav-root
-                =link_to "" do
-                  %i.fa.fa-check
-                  %span やることリスト
+        - if user_signed_in?
+          .header__inner__nav-box__right
+            %ul.header__inner__nav-box__right__user-nav
+              %li
+                .header-user-icon
+                  =link_to(mypage_path) do
+                    .icon
+                      =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", width: "32")
+                    %div マイページ
+              %li
+                .pc-header-nav-root
+                  =link_to "" do
+                    %i.fa.fa-bell
+                    %span お知らせ
+              %li
+                .pc-header-nav-root
+                  =link_to "" do
+                    %i.fa.fa-check
+                    %span やることリスト
+        - else
+          .header__inner__nav-box__right
+            %ul.header__inner__nav-box__right__group
+              %li.header__inner__nav-box__right__group__login
+                =link_to(sign_in_path, class: "header-btn btn-red") do
+                  ログイン
+              %li.header__inner__nav-box__right__group__login
+                =link_to(sign_up_top_mypages_path, class: "header-btn btn-blue") do
+                  新規会員登録

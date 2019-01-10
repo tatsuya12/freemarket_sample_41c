@@ -1,6 +1,10 @@
+<<<<<<< HEAD:app/views/items/user_confirmation.html.haml
 - breadcrumb :user_confirmation
+=======
+= render './items/header'
+>>>>>>> master:app/views/mypages/user_confirmation.html.haml
 %main.l-container
-  = render 'side-bar'
+  = render './items/side-bar'
   .l-content
     %section.l-chapter-container
       %h2.l-chapter-container__head
@@ -282,5 +286,5 @@
               本人情報の登録について
               %i.fas.fa-chevron-right
         %input{name: "__csrf_value", type: "hidden", value: ""}/
-= render 'app-banner'
-= render 'footer'
+= render './items/app-banner'
+= render './items/footer'

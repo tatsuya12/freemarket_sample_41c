@@ -1,6 +1,10 @@
+<<<<<<< HEAD:app/views/items/profile.html.haml
 - breadcrumb :mydata
+=======
+= render './items/header'
+>>>>>>> master:app/views/mypages/profile.html.haml
 %main.l-container
-  = render 'side-bar'
+  = render './items/side-bar'
   .l-content
     %section.l-profile-container
       %h2.l-chapter-head プロフィール
@@ -13,6 +17,6 @@
           %textarea.textarea-default{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
           %button.btn-default.btn-red{type: "submit"} 変更する
 
-= render 'camera-button'
-= render 'app-banner'
-= render 'footer'
+= render './items/camera-button'
+= render './items/app-banner'
+= render './items/footer'

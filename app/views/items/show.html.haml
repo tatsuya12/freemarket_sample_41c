@@ -1,7 +1,8 @@
 = render 'header'
 
 %section.item-box-container.l-single-container
-  %h1.item-name @item.name
+  %h1.item-name
+    = @item.name
   .item-main-content.clearfix
     .item-photo
       .owl-carousel
@@ -14,7 +15,7 @@
         %th 出品者
         %td
           = link_to root_path do
-            = @item.seller_id.user.name
+            = @item.name
           .item-rates
             .item-rates__ratings
               = fa_icon ('smile-o'), class: 'smile-pink'
@@ -40,32 +41,36 @@
         %td (@item.brand.name if @item.brand.name != nill)
       %tr
         %th 商品の状態
-        %td 新品、未使用(@item.condition)
+        %td
+          = @item.condition
       %tr
         %th 配送料の負担
-        %td 送料込み(出品者負担)(@item.shipping_fee)
+        %td
+          = @item.delivery.shipping_charge
       %tr
         %th 配送の方法
-        %td 普通郵便(定形、定形外)(@item.deliverly_id)
+        %td
+          = @item.delivery.shipping_method
       %tr
         %th 配送元地域
         %td
-          = link_to "青森県 (@item.user.prefecture)", root_path
+          = link_to root_path do
+            = @item.delivery.origin_region
       %tr
         %th 発送日の目安
-        %td 2~3日で発送(@item.shipping_date)
+        %td
+          = @item.delivery.shipping_days
 
   .item-price-box.text-center
-    %span.item-price.bold ¥ 500
+    %span.item-price.bold
+      = @item.price
     %span.item-tax (税込)
     %span.item-shipping-fee 送料込み
-  = link_to "購入画面に進む", root_path, class: "item-buy-btn"
-  -# detail_item_path(@item)
+  = link_to "購入画面に進む", detail_item_path(@item), class: "item-buy-btn"
 
   .item-description.f14
-    %p.item-description__inner 乃木坂46齋藤飛鳥のポストカードです。
-    即購入⭕️
-    コンビニ支払いの方は購入後、支払いの時間をお伝えください。
+    %p.item-description__inner
+      = @item.introduction
   .item-button-container.clearfix
     .item-button-left
       %button.item-button.item-button-like

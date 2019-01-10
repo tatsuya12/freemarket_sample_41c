@@ -83,6 +83,9 @@ body{
               text-decoration: none;
               height: 38px;
               line-height: 32px;
+              &:hover{
+                color: $blue;
+              }
               i.fa.fa-bell{
                 font-size: 17px;
                 speak: none;
@@ -129,20 +132,20 @@ body{
           }
           .btn-red{
             display: block;
-            background: #ea352d;
-            border: 1px solid #ea352d;
-            color: #fff;
+            background: $red;
+            border: 1px solid $red;
+            color: $white;
             margin-right: 10px;
           }
           .btn-blue{
             display: block;
-            background: #fff;
-            color: #0099e8;
-            border: 1px solid #0099e8;
+            background: $white;
+            color: $blue;
+            border: 1px solid $blue;
             &:hover{
-              background: #0099e8;
-              color: #fff;
-              transition-duration: 1s;
+              background: $blue;
+              color: $white;
+              transition-duration: 0.5s;
             }
           }
         }

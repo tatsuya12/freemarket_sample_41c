@@ -1,0 +1,128 @@
+= render './items/header'
+%main.l-container
+  = render './items/side-bar'
+  .l-content-mypage
+    %section.mypage-user-icon
+      =link_to root_path do
+        %figure
+          =image_tag("//static-mercari-jp-imgtr2.akamaized.net/thumb/members/209996436.jpg?1467039374", width: "60")
+        %h2.bold eri
+        .mypage-number
+          %div
+          評価
+          %span.bold 10
+          出品数
+          %span.bold 8
+    %section.mypage-tab-container-notification-todo
+      .mypage-tabs
+        %input#news{checked: "checked", name: "tab_item", type: "radio"}/
+        %label.tab_item{for: "news"} お知らせ
+        %input#to-do{name: "tab_item", type: "radio"}/
+        %label.tab_item{for: "to-do"} やることリスト
+        #news_content.tab_content
+          %li
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
+              .mypage-item-body
+                .mypage-item-text
+                  【終了間近】年末年始のお得なプレゼントキャンペーン開催中！
+                .time
+                  %i.fa.fa-bell
+                  %span 2 日前
+              %i.fa.fa-chevron-right
+          %li
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
+              .mypage-item-body
+                .mypage-item-text お知らせ：お得なキャンペーン始まりました！詳細はこちら
+                .time
+                  %i.fa.fa-bell
+                  %span 3 日前
+              %i.fa.fa-chevron-right
+          %li
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
+              .mypage-item-body
+                .mypage-item-text 【5％OFFクーポンをお持ちです！】年末年始もお得にお買い物をお楽しみください♪
+                .time
+                  %i.fa.fa-bell
+                  %span 4 日前
+              %i.fa.fa-chevron-right
+          %li
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
+              .mypage-item-body
+                .mypage-item-text 2018年最も取引数の多かったブランドは？メルカリのトレンドをチェック♪
+                .time
+                  %i.fa.fa-bell
+                  %span 6 日前
+              %i.fa.fa-chevron-right
+          %li
+            =link_to(root_path, class: 'mypage-item-link') do
+              =image_tag("//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", class: 'lazyloaded')
+              .mypage-item-body
+                .mypage-item-text 【あと2日】ファッションアイテムが売れたら“必ず“ポイントがもらえるキャンペーン開催中
+                .time
+                  %i.fa.fa-bell
+                  %span 17 日前
+              %i.fa.fa-chevron-right
+        #to-do_content.tab_content
+          .merukariicon
+            =image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4136293187")
+          %li.mypage-item-not-found.bold
+            現在、やることリストはありません
+      
+      %li.mypage-go-list
+        .mypage-go-list-link
+          =link_to "一覧を見る", "/jp/mypage/purchased/"
+    %section.mypage-tab-container
+      %h2.mypage-tab-head 購入した商品
+      %section.mypage-tab-container-notification-tread
+        .mypage-tabs
+          %input#treading{checked: "checked", name: "t-tab_item", type: "radio"}/
+          %label.t-tab_item{for: "treading"} 取引中
+          %input#treaded{name: "t-tab_item", type: "radio"}/
+          %label.t-tab_item{for: "treaded"} 過去の取引 
+          #treading_content.tab_content
+            .merukariicon
+              =image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4136293187")
+            %li.mypage-item-not-found.bold
+              取引中の商品がありません
+          #treaded_content.tab_content
+            .tab-content
+              %li
+                =link_to(root_path, class: 'mypage-item-link') do
+                  =image_tag("//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m492100228_1.jpg?1469066046", class: 'lazyloaded')
+                  .mypage-item-body
+                    .mypage-item-text
+                      「【SALE】ヴィダルサスーン コテ25mmマイナスイオンヘアアイロン 海外対応」を購入しました。
+                      %span 取引が完了しました
+                    .mypage-item-status.bold.done
+                      取引完了
+                  %i.icon-arrow-right
+              %li
+                =link_to(root_path, class: 'mypage-item-link') do
+                  =image_tag("//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m615895437_1.jpg?1476378490", class: 'lazyloaded')
+                  .mypage-item-body
+                    .mypage-item-text
+                      「clathas財布」を購入しました。
+                      %span 取引が完了しました
+                    .mypage-item-status.bold.done
+                      取引完了
+                  %i.icon-arrow-right
+              %li
+                =link_to(root_path, class: 'mypage-item-link') do
+                  =image_tag("//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m926884174_1.jpg?1459661149", class: 'lazyloaded')
+                  .mypage-item-body
+                    .mypage-item-text
+                      「香水セット」 を購入しました。
+                      %span 取引が完了しました
+                    .mypage-item-status.bold.done
+                      取引完了
+                  %i.icon-arrow-right
+        %li.mypage-go-list
+          .mypage-go-list-link
+            =link_to "一覧を見る", "/jp/mypage/purchased/"
+  =render './items/camera-button'
+= render './items/app-banner'
+= render './items/footer'

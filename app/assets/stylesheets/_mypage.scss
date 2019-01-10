@@ -5,7 +5,7 @@
   }
 }
 
-.mypage-user-icon {
+section.mypage-user-icon {
   height: 200px;
   padding: 20px;
   background: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?40116333);
@@ -33,6 +33,7 @@ li {
 
 .mypage-number {
   display: flex;
+  color: $text-color;
   font-size: 16px;
   margin-top: 12px;
   display: inline-block;
@@ -209,6 +210,9 @@ input[name="t-tab_item"] {
 }
 
 .merukariicon {
+  margin: 0 auto;
+  width: 80px;
+  height: 65px;
   padding-top: 30px;
   text-align: center;
 }

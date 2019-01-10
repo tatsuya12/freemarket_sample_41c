@@ -3,16 +3,16 @@
   = render 'side-bar'
   .l-content-mypage
     %section.mypage-user-icon
-      %a{href: "https://www.mercari.com/jp/u/209996436/"}
+      =link_to root_path do
         %figure
-          %img{alt: "", height: "60", src: "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/209996436.jpg?1467039374", width: "60"}/
+          =image_tag("//static-mercari-jp-imgtr2.akamaized.net/thumb/members/209996436.jpg?1467039374", width: "60")
         %h2.bold eri
-      .mypage-number
-        %div
-        評価
-        %span.bold 10
-        出品数
-        %span.bold 8
+        .mypage-number
+          %div
+          評価
+          %span.bold 10
+          出品数
+          %span.bold 8
     %section.mypage-tab-container-notification-todo
       .mypage-tabs
         %input#news{checked: "checked", name: "tab_item", type: "radio"}/
@@ -68,7 +68,7 @@
               %i.fa.fa-chevron-right
         #to-do_content.tab_content
           .merukariicon
-            %img{height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4136293187", width: "80"}/
+            =image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4136293187")
           %li.mypage-item-not-found.bold
             現在、やることリストはありません
       
@@ -85,7 +85,7 @@
           %label.t-tab_item{for: "treaded"} 過去の取引 
           #treading_content.tab_content
             .merukariicon
-              %img{height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4136293187", width: "80"}/
+              =image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4136293187")
             %li.mypage-item-not-found.bold
               取引中の商品がありません
           #treaded_content.tab_content
@@ -123,6 +123,6 @@
         %li.mypage-go-list
           .mypage-go-list-link
             =link_to "一覧を見る", "/jp/mypage/purchased/"
-  =render "camera-button"
-= render "app-banner"
-= render "footer"
+  =render 'camera-button'
+= render 'app-banner'
+= render 'footer'

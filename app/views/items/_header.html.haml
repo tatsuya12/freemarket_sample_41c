@@ -41,9 +41,9 @@
         - else
           .header__inner__nav-box__right
             %ul.header__inner__nav-box__right__group
-              %li.header__inner__nav-box__right__group__sign-in
+              %li.header__inner__nav-box__right__group__login
                 =link_to(sign_in_path, class: "header-btn btn-red") do
                   ログイン
-              %li.header__inner__nav-box__right__group__sign-up
-                =link_to (sign_up_top_mypages_path, class: "header-btn btn-blue") do
+              %li.header__inner__nav-box__right__group__login
+                =link_to(sign_up_top_mypages_path, class: "header-btn btn-blue") do
                   新規会員登録

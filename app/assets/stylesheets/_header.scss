@@ -111,35 +111,39 @@ body{
         }
         &__group{
           display:flex;
-          justify-content:space-around;
-          &__sign-in{
-            margin: 0;
+          &__login{
+            margin-bottom: 7px;
             display: inline-block;
             a{
               padding: 0 10px;
               line-height: 30px;
             }
           }
-          &__sign-up{}
           .header-btn{
             border-radius: 4px;
             text-align: center;
-            padding: 5px 10px;
-            // line-height: 30px;
+            padding: 3px 10px;
               &:hover{
                 text-decoration: none;
               }
           }
           .btn-red{
+            display: block;
             background: #ea352d;
             border: 1px solid #ea352d;
             color: #fff;
+            margin-right: 10px;
           }
           .btn-blue{
             display: block;
-            border: 1px solid #0099e8;
             background: #fff;
             color: #0099e8;
+            border: 1px solid #0099e8;
+            &:hover{
+              background: #0099e8;
+              color: #fff;
+              transition-duration: 1s;
+            }
           }
         }
       }

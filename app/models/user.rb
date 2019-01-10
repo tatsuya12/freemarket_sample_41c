@@ -13,6 +13,8 @@ class User < ApplicationRecord
     end
   end
 
+  has_many :items
+
   validates :name, presence: true,length: { maximum: 20 }
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true

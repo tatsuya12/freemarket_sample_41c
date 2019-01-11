@@ -12,3 +12,16 @@
 User.create(name: "テスト１", email: "test@gmail.com", password: "password")
 
 Item.create(name: "アイテム１", price: "15000", status: "", size: "M", condition: "新品、未使用", introduction: "テスト商品紹介")
+
+
+
+
+
+
+metal, jazz = Category.create([{name: "metal"}, {name: "jazz"}])
+
+melodic, black = metal.children.create([{name: "melodic"}, {name: "black"}])
+melodic.children.create([{name: "melodic-death"}, {name: "melodic-speed"}])
+black.children.create([{name: "symphonic-black"}, {name: "melodic-black"}])
+
+swing, modern = jazz.children.create([{name: "swing"}, {name: "modern"}])

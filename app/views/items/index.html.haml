@@ -34,10 +34,16 @@
   %section.pickup-container
     %h2.pickup-head
       ピックアップカテゴリー
-    = render partial: "top-OneRow"
-    %h2.pickup-head
-      ピックアップブランド
-    = render partial: "top-OneRow"
+    %section.items-box-container.clearfix
+      %h3.text-center
+        = link_to "レディース 新着アイテム", root_path
+    .items-box-content.clearfix
+      = render partial: 'top-ForOnePerson', collection: @items, as: :item
+
+    .view-all
+      =link_to "すべての商品を見る", root_path
+      %h2.pickup-head
+        ピックアップブランド
 
 
   %section.pickup-container

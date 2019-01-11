@@ -1,13 +1,14 @@
 %section.items-box
   %a{:href => "https://item.mercari.com/jp/m83837570559/"}
     .figure.items-box-photo
-      %img.is-higher-height.lazyloaded{:alt => "本日限定値下げ‼️chesty♡フラワーモチーフスカート♡新品タグ付♡サイズ1", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m78759008426_1.jpg?1544863112", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m78759008426_1.jpg?1544863112"}/
+      .is-higher-height.lazyloaded
+        / =image_tag(image.image)
     .items-box-body
       %h3.items-box-name.font-2
         = item.name
       .items-box-num.clearfix
         .items-box-price.font-5
-          = item.price
+          = number_to_currency(item.price, unit: "￥", precision: 0)
         .items-box-likes.font-2
           %i.fa.fa-heart
           %span

@@ -9,6 +9,20 @@ User.create(name: "テスト１", email: "test@gmail.com", password: "password")
 Item.create(name: "アイテム１", price: "15000", status: "", size: "M", condition: "新品、未使用", introduction: "テスト商品紹介")
 
 
+<<<<<<< HEAD
 100.times do |number|
   Image.create(image: "#{number}", image: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m68416746432_1.jpg?1545554718")
 end
+=======
+
+
+
+
+metal, jazz = Category.create([{name: "metal"}, {name: "jazz"}])
+
+melodic, black = metal.children.create([{name: "melodic"}, {name: "black"}])
+melodic.children.create([{name: "melodic-death"}, {name: "melodic-speed"}])
+black.children.create([{name: "symphonic-black"}, {name: "melodic-black"}])
+
+swing, modern = jazz.children.create([{name: "swing"}, {name: "modern"}])
+>>>>>>> master

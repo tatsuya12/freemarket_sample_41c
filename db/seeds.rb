@@ -12,11 +12,6 @@
 User.create(name: "テスト１", email: "test@gmail.com", password: "password")
 
 Item.create(name: "アイテム１", price: "15000", status: "", size: "M", condition: "新品、未使用", introduction: "テスト商品紹介")
-<<<<<<< HEAD
-=======
-
-
-
 
 
 
@@ -27,4 +22,3 @@ melodic.children.create([{name: "melodic-death"}, {name: "melodic-speed"}])
 black.children.create([{name: "symphonic-black"}, {name: "melodic-black"}])
 
 swing, modern = jazz.children.create([{name: "swing"}, {name: "modern"}])
->>>>>>> 551ce5cbd55006f14ef785e3934638d3c502f9c0

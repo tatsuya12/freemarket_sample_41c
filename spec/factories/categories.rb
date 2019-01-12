@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
     name "アディダス"
-    ancestry ""
+    ancestry nil
   end
 end

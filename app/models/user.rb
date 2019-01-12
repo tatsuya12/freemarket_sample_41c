@@ -20,7 +20,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
 
-  has_many :items, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one :credit_card, dependent: :destroy

@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 20190111074949) do
     t.string   "origin_region",   null: false
     t.string   "shipping_days",   null: false
     t.string   "shipping_method", null: false
-    t.integer  "item_id",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "item_id"
     t.index ["item_id"], name: "index_deliveries_on_item_id", using: :btree
   end
 
@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(version: 20190111074949) do
     t.datetime "updated_at"
     t.integer  "brand_id"
     t.integer  "category_id"
-    t.integer  "delivery_id"
     t.integer  "buyer_id"
     t.integer  "seller_id"
+    t.integer  "delivery_id"
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree

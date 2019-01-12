@@ -83,4 +83,4 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'gretel'
 gem 'omniauth-google-oauth2'
-gem "ancestry"
+gem 'ancestry'

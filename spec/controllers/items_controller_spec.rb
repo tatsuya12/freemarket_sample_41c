@@ -4,7 +4,10 @@ describe ItemsController, type: :controller do
   describe 'GET #show' do
     it "assgins the requested item to @item" do
       user = create(:user)
-      item = create(:item, buyer_id: user.id, seller_id: user.id)
+      brand = create(:brand)
+      category = create(:category)
+      delivery = create(:delivery)
+      item = create(:item, buyer_id: user.id, seller_id: user.id, brand_id: brand.id, category_id: category.id, delivery_id: delivery.id)
       get :show, params: { id: item }
       expect(assgins(:item)).to eq item
     end
@@ -12,7 +15,9 @@ describe ItemsController, type: :controller do
 
     it "renders the :show template" do
       user = create(:user)
-      item = create(:item, buyer_id: user.id, seller_id: user.id)
+      brand = create(:brand)
+      category = create(:category)
+      item = create(:item, buyer_id: user.id, seller_id: user.id, brand_id: brand.id, category_id: category.id, delivery_id: delivery.id)
       get :show, params: { id: item }
       expect(response).to render_template :show
     end

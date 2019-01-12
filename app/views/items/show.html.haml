@@ -7,15 +7,14 @@
     .item-photo
       .owl-carousel
         .owl-item-inner
-          = image_tag "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70903223243_1.jpg?1545797586", class: "owl-lazy"
-          / %img.owl-lazy{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m70903223243_1.jpg?1545797586"}/
-
+          - @item.images.each do |image|
+            = image_tag image.image, class: "owl-lazy"
     %table.item-detail-table
       %tr
         %th 出品者
         %td
           = link_to root_path do
-            = @item.name
+            = @item.buyer.name
           .item-rates
             .item-rates__ratings
               = fa_icon ('smile-o'), class: 'smile-pink'
@@ -38,7 +37,7 @@
               = fa_icon( 'angle-right', text: " アイドル", class: 'fa-fw' )
       %tr
         %th ブランド
-        %td (@item.brand.name if @item.brand.name != nill)
+        %td = @item.brand&.name
       %tr
         %th 商品の状態
         %td
@@ -63,7 +62,7 @@
 
   .item-price-box.text-center
     %span.item-price.bold
-      = @item.price
+      = number_to_currency(@item.price, unit: "￥", precision: 0)
     %span.item-tax (税込)
     %span.item-shipping-fee 送料込み
   = link_to "購入画面に進む", detail_item_path(@item), class: "item-buy-btn"

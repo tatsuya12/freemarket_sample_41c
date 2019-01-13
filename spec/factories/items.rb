@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
     name "テスト1"
-    price "10000"
+    price 10000
     status ""
     size "M"
     condition "新品、未使用"

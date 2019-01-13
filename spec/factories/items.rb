@@ -6,7 +6,7 @@ FactoryBot.define do
     size "M"
     condition "新品、未使用"
     introduction "イントロダクション"
-    created_at "2019-01-11 02:52:49"
-    updated_at "2019-01-11 02:52:49"
+    created_at Faker::Time.between(2.days.ago, Date.today, :all)
+    updated_at Faker::Time.between(2.days.ago, Date.today, :all)
   end
 end

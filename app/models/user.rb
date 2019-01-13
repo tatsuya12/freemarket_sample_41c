@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
@@ -13,24 +11,15 @@ class User < ApplicationRecord
     end
   end
 
-  # validates :name, presence: true,length: { maximum: 20 }
-  # validates :email, presence: true, uniqueness: true
-  # validates :password, presence: true
-
-  # has_many :buyer_items, class_name: ‘Item’, foreign_key: ‘buyer_id’, dependent: :destroy
-  # has_many :seller_items, class_name: ‘Item’, foreign_key: ‘seller_id’, dependent: :destroy
-  # has_many :likes, dependent: :destroy
-  # has_many :comments, dependent: :destroy
-  # has_one :credit_card, dependent: :destroy
 
 
   validates :name, presence: true,length: { maximum: 20 }
- validates :email, presence: true, uniqueness: true
- validates :password, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
 
- has_many :buyer_items, class_name: 'Item', foreign_key: 'buyer_id', dependent: :destroy
- has_many :seller_items, class_name: 'Item', foreign_key: 'seller_id', dependent: :destroy
- has_many :likes, dependent: :destroy
- has_many :comments, dependent: :destroy
- has_one :credit_card, dependent: :destroy
+  has_many :buyer_items, class_name: 'Item', foreign_key: 'buyer_id', dependent: :destroy
+  has_many :seller_items, class_name: 'Item', foreign_key: 'seller_id', dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_one :credit_card, dependent: :destroy
 end

@@ -1,8 +1,9 @@
 FactoryBot.define do
   factory :delivery do
-    shipping_charge "料金"
-    origin_region "配送元"
-    shipping_days "日にち"
-    shipping_method "黒猫"
+  	shipping_charge "送料込み (出品者負担)"
+  	origin_region "広島県"
+  	shipping_method "普通郵便（定型、定形外）"
+  	shipping_days "2〜3日で発送"
+  	item_id "1"
   end
 end

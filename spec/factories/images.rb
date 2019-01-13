@@ -1,7 +1,5 @@
 FactoryBot.define do
   factory :image do
-    image "画像"
-    created_at "2019-01-11 02:52:49"
-    updated_at "2019-01-11 02:52:49"
+    image        "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m78065042526_1.jpg?1544583539"
   end
 end

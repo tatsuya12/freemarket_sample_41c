@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe ItemsController, type: :controller do
   describe 'GET #show' do
-    let!(:user) { create(:user) }
+    let(:user) { create(:user) }
     let(:brand) { create(:brand) }
     let(:category) { create(:category) }
     let(:item) {
@@ -30,7 +30,7 @@ describe ItemsController, type: :controller do
   end
 
   describe 'GET #edit' do
-    let!(:user) { create(:user) }
+    let(:user) { create(:user) }
     let(:brand) { create(:brand) }
     let(:category) { create(:category) }
     let(:item) {
@@ -58,7 +58,7 @@ describe ItemsController, type: :controller do
   end
 
   describe 'PATCH #update' do
-    let!(:user) { create(:user) }
+    let(:user) { create(:user) }
     let(:brand) { create(:brand) }
     let(:category) { create(:category) }
     let(:item) {

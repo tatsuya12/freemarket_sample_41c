@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 20190112104333) do
     t.integer  "category_id"
     t.integer  "buyer_id"
     t.integer  "seller_id"
-    t.integer  "delivery_id"
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree

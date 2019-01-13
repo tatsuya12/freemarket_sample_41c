@@ -156,7 +156,7 @@
     width: 213px;
     margin-left: 20px;
     &-photo {
-      width: 206px;
+      width: 213px;
       height: 213px;
       &__data {
       }
@@ -196,10 +196,10 @@
     }
   }
 
-  .is-higher-height.lazyloaded {
-    width: 107%;
-    height: 100%;
-    vertical-align: inherit;
+  .main-image {
+    width: 213px;
+    height: 213px;
+    object-fit: cover;
   }
 
 

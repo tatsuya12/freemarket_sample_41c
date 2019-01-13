@@ -6,15 +6,26 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    if item.seller_id == current_user.id
+      item.update(item_params)
+    end
+  end
+
   def detail
     @item = Item.find(params[:id])
   end
 
 
-  # before_create :add_currency
+  private
+    def item_params
+      params.permit(:name, :price, :status, :size, :condition, :introduction)
+    end
 
-  # def add_currency
-  #   self.price = "¥" + price
-  # end
 
 end

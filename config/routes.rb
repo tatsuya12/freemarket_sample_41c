@@ -27,10 +27,10 @@ Rails.application.routes.draw do
  end
 
 
- root 'items#index'
- resources :items do
-   collection do
-     get :detail
-   end
- end
+  root 'items#index'
+  resources :items do
+    member do
+      get :detail
+    end
+  end
 end

@@ -10,10 +10,10 @@
 end
 Item.create(name: "アイテム１", price: "15000", status: "", size: "M", condition: "新品、未使用", introduction: "テスト商品紹介")
 
-Image.create(image: "https://shop.r10s.jp/book/cabinet/2806/9784798152806.jpg", item_id: 1)
 
-
-
+100.times do |number|
+  Image.create(image: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m68416746432_1.jpg?1545554718", item_id: "#{number}")
+end
 
 metal, jazz = Category.create([{name: "metal"}, {name: "jazz"}])
 

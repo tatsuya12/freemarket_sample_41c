@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(name: "テスト１", email: "test@gmail.com", password: "password")
+5.times do |i|
+  User.create(name: "テスト#{i}", email: "test#{i}@gmail.com", password: "password#{i}")
+end
 Item.create(name: "アイテム１", price: "15000", status: "", size: "M", condition: "新品、未使用", introduction: "テスト商品紹介")
 
 

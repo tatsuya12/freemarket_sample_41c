@@ -1,6 +1,5 @@
 FactoryBot.define do
-    factory :image do
-  	image        "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m78065042526_1.jpg?1544583539"
-    item_id      "1"
+  factory :image do
+    image "image.url"
   end
 end

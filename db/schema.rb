@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20190114044240) do
     t.string   "origin_region",   null: false
     t.string   "shipping_days",   null: false
     t.string   "shipping_method", null: false
-    t.integer  "item_id",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "item_id"
     t.index ["item_id"], name: "index_deliveries_on_item_id", using: :btree
   end
 

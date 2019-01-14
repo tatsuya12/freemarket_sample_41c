@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190114044240) do
+ActiveRecord::Schema.define(version: 20190114112736) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -26,22 +26,14 @@ ActiveRecord::Schema.define(version: 20190114044240) do
     t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
   end
 
-  create_table "credit_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                  null: false
-    t.text     "token",      limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
-  end
-
   create_table "deliveries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "shipping_charge", null: false
     t.string   "origin_region",   null: false
     t.string   "shipping_days",   null: false
     t.string   "shipping_method", null: false
-    t.integer  "item_id",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "item_id"
     t.index ["item_id"], name: "index_deliveries_on_item_id", using: :btree
   end
 
@@ -87,7 +79,6 @@ ActiveRecord::Schema.define(version: 20190114044240) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "credit_cards", "users"
   add_foreign_key "deliveries", "items"
   add_foreign_key "images", "items"
   add_foreign_key "items", "brands"

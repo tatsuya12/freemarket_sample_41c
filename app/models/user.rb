@@ -17,9 +17,8 @@ class User < ApplicationRecord
  validates :email, presence: true, uniqueness: true
  validates :password, presence: true
 
- has_many :buyer_items, class_name: 'Item', foreign_key: 'buyer_id', dependent: :destroy
- has_many :seller_items, class_name: 'Item', foreign_key: 'seller_id', dependent: :destroy
- has_many :likes, dependent: :destroy
- has_many :comments, dependent: :destroy
- has_one :credit_card, dependent: :destroy
+  has_many :buyer_items, class_name: 'Item', foreign_key: 'buyer_id'
+  has_many :seller_items, class_name: 'Item', foreign_key: 'seller_id'
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

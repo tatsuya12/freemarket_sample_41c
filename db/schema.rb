@@ -31,15 +31,15 @@ ActiveRecord::Schema.define(version: 20190112104333) do
     t.string   "origin_region",   null: false
     t.string   "shipping_days",   null: false
     t.string   "shipping_method", null: false
-    t.integer  "item_id",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "item_id"
     t.index ["item_id"], name: "index_deliveries_on_item_id", using: :btree
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "image",      limit: 65535
-    t.integer  "item_id"
+    t.text     "image",      limit: 65535, null: false
+    t.integer  "item_id",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree

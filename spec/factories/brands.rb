@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :brand do
-    name              "CHANEL"
+    name "アディダス"
   end
 end

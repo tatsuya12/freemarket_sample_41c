@@ -5,7 +5,7 @@ describe ItemsController do
         let(:user) {create(:user)}
         let(:category) {create(:category)}
         let(:brand) {create(:brand)}
-        
+
         it "renders the :index template" do
             get :index
             expect(response).to render_template :index

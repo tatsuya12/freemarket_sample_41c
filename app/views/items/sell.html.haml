@@ -14,7 +14,13 @@
         .sell-upload-items.have-item-0
           %ul
       .sell-upload-drop-box.have-item-0
-        %input.sell-upload-drop-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}
+        / = form_for [@group, @message] do |f|
+        /   = f.text_field :content, class: 'main__footer__text', placeholder: 'type a message'
+        /   .main__footer__form__mask
+        /     = f.label :image, class: 'form__mask__image' do
+        /       = fa_icon 'picture-o', class: 'icon'
+        /       = f.file_field :image, class: 'hidden'
+        /   = f.submit 'Send', class: 'main__footer__send-button'
         %pre.visible-pc
           ドラッグアンドドロップ
           またはクリックしてファイルをアップロード
@@ -33,16 +39,17 @@
         必須
       %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
   .sell-content
-    %h3.sell-sub-head
-      商品の詳細
+    .sell-detail
+      %h3.sell-sub-head
+        商品の詳細
     .category-form-box
       .form-group
         %label
           カテゴリー
           %span.form-require
             必須
-        %div
           .select-wrap
+        %p
           %select#select.select-default
             %option{value: ""} ---
             %option{value: "1"} レディース
@@ -60,60 +67,88 @@
             %option{value: "10"} その他
           %i.icon-arrow-bottom
           .select-wrap
-          %select.select-default
-            %option{value: ""} ---
-            %option{value: "11"} トップス
-            %option{value: "12"} ジャケット/アウター
-            %option{value: "13"} パンツ
-            %option{value: "14"} スカート
-            %option{value: "15"} ワンピース
-            %option{value: "16"} 靴
-            %option{value: "17"} ルームウェア/パジャマ
-            %option{value: "18"} レッグウェア
-            %option{value: "19"} 帽子
-            %option{value: "20"} バッグ
-            %option{value: "21"} アクセサリー
-            %option{value: "22"} ヘアアクセサリー
-            %option{value: "23"} 小物
-            %option{value: "24"} 時計
-            %option{value: "25"} ウィッグ/エクステ
-            %option{value: "26"} 浴衣/水着
-            %option{value: "27"} スーツ/フォーマル/ドレス
-            %option{value: "28"} マタニティ
-            %option{value: "29"} その他
-          %i.icon-arrow-bottom
+            %select.select-default
+              %option{value: ""} ---
+              %option{value: "11"} トップス
+              %option{value: "12"} ジャケット/アウター
+              %option{value: "13"} パンツ
+              %option{value: "14"} スカート
+              %option{value: "15"} ワンピース
+              %option{value: "16"} 靴
+              %option{value: "17"} ルームウェア/パジャマ
+              %option{value: "18"} レッグウェア
+              %option{value: "19"} 帽子
+              %option{value: "20"} バッグ
+              %option{value: "21"} アクセサリー
+              %option{value: "22"} ヘアアクセサリー
+              %option{value: "23"} 小物
+              %option{value: "24"} 時計
+              %option{value: "25"} ウィッグ/エクステ
+              %option{value: "26"} 浴衣/水着
+              %option{value: "27"} スーツ/フォーマル/ドレス
+              %option{value: "28"} マタニティ
+              %option{value: "29"} その他
+            %i.icon-arrow-bottom
+            .select-wrap
+            %select.select-default
+              %option{value: ""} ---
+              %option{value: "137"} テーラードジャケット
+              %option{value: "138"} ノーカラージャケット
+              %option{value: "139"} Gジャン/デニムジャケット
+              %option{value: "140"} レザージャケット
+              %option{value: "141"} ダウンジャケット
+              %option{value: "142"} ライダースジャケット
+              %option{value: "143"} ミリタリージャケット
+              %option{value: "144"} ダウンベスト
+              %option{value: "145"} ジャンパー/ブルゾン
+              %option{value: "146"} ポンチョ
+              %option{value: "149"} ロングコート
+              %option{value: "150"} トレンチコート
+              %option{value: "151"} ダッフルコート
+              %option{value: "152"} ピーコート
+              %option{value: "1129"} チェスターコート
+              %option{value: "1149"} モッズコート
+              %option{value: "147"} スタジャン
+              %option{value: "153"} 毛皮/ファーコート
+              %option{value: "154"} スプリングコート
+              %option{value: "148"} スカジャン
+              %option{value: "155"} その他
+            %i.icon-arrow-bottom
+      .form-group
+        %label
+          サイズ
+          %span.form-require
+            必須
           .select-wrap
+        %p
           %select.select-default
             %option{value: ""} ---
-            %option{value: "137"} テーラードジャケット
-            %option{value: "138"} ノーカラージャケット
-            %option{value: "139"} Gジャン/デニムジャケット
-            %option{value: "140"} レザージャケット
-            %option{value: "141"} ダウンジャケット
-            %option{value: "142"} ライダースジャケット
-            %option{value: "143"} ミリタリージャケット
-            %option{value: "144"} ダウンベスト
-            %option{value: "145"} ジャンパー/ブルゾン
-            %option{value: "146"} ポンチョ
-            %option{value: "149"} ロングコート
-            %option{value: "150"} トレンチコート
-            %option{value: "151"} ダッフルコート
-            %option{value: "152"} ピーコート
-            %option{value: "1129"} チェスターコート
-            %option{value: "1149"} モッズコート
-            %option{value: "147"} スタジャン
-            %option{value: "153"} 毛皮/ファーコート
-            %option{value: "154"} スプリングコート
-            %option{value: "148"} スカジャン
-            %option{value: "155"} その他
+            %option{value: "1"} XXS以下
+            %option{value: "2"} XXS（SS)
+            %option{value: "3"} S
+            %option{value: "4"} M
+            %option{value: "5"} L
+            %option{value: "6"} XL(LL)
+            %option{value: "3"} 2XL(3L)
+            %option{value: "4"} 3XL(4L)
+            %option{value: "5"} 4XL(5L)以上
+            %option{value: "6"} FREE SIZE
           %i.icon-arrow-bottom
+      .form-group
+        %label
+          ブランド
+          %span.form-gray
+            任意
+          .select-wrap
+        %p
+          %input.select-default
       .form-group
         %label
           商品の状態
           %span.form-require
             必須
-        %div
           .select-wrap
+        %p
           %select.select-default
             %option{value: ""} ---
             %option{value: "1"} 新品、未使用
@@ -123,7 +158,6 @@
             %option{value: "5"} 傷や汚れあり
             %option{value: "6"} 全体的に状態が悪い
           %i.icon-arrow-bottom
-
   .sell-content.clearfix
     .question
       %h3.sell-sub-head 配送について
@@ -229,7 +263,7 @@
               .pricebox
                 %yen
                   ¥
-                %input.input-price{placeholder: "例）300", value: ""}/
+                %input.input-price{placeholder: "例）300", value: "", style:"text-align: right; "}
         %li.price-data
           .l-left
             販売手数料 (10%)
@@ -264,16 +298,3 @@
 
 %select#selPref{:onchange => "selPref(this);"}
 %select#selCity
-
-
-.hidden_box
-  %select#select
-    %option{:value => ""} ー
-    %option#value1{:value => "1"} 選択1
-    %option#value2{:value => "2"} 選択2
-/ 開閉セットbox
-#display
-  #box1{:style => "display: none;"}
-    %p 選択1でここが表示
-  #box2{:style => "display: none;"}
-    %p 選択2でここが表示

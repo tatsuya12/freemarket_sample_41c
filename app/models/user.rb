@@ -14,6 +14,11 @@ class User < ApplicationRecord
   end
 
   validates :name, presence: true,length: { maximum: 20 }
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
+ validates :email, presence: true, uniqueness: true
+ validates :password, presence: true
+
+  has_many :buyer_items, class_name: 'Item', foreign_key: 'buyer_id'
+  has_many :seller_items, class_name: 'Item', foreign_key: 'seller_id'
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

@@ -51,6 +51,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem "factory_bot_rails"
   gem 'faker'
+  gem 'rails-controller-testing'
 
 end
 
@@ -83,3 +84,4 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'gretel'
 gem 'omniauth-google-oauth2'
+gem 'ancestry'

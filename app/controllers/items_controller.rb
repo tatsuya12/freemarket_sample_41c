@@ -1,23 +1,26 @@
 class ItemsController < ApplicationController
+
   def index
+  	@items = Item.includes(:images).limit(4).order("created_at DESC")
   end
 
   def show
+    @item = Item.find(params[:id])
   end
-  
-  def logout
+
+  def edit
+    @item = Item.find(params[:id])
   end
-  
+
+  def update
+    item = Item.find(params[:id])
+    if item.seller_id == current_user.id
+      item.update(item_params)
+    end
+  end
+
   def detail
-  end
-
-  def credit
-  end
-
-  def credit_detail
-  end
-
-  def user_confirmation
+    @item = Item.find(params[:id])
   end
 
   def profile
@@ -25,5 +28,10 @@ class ItemsController < ApplicationController
 
   def sell
   end
+
+  private
+    def item_params
+      params.permit(:name, :price, :status, :size, :condition, :introduction)
+    end
 
 end

@@ -32,6 +32,16 @@
   vertical-align: top;
 }
 
+.form-gray {
+  background-color: #ccc;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
 .sell-upload-drop-box.have-item-0 {
   position: relative;
   min-height: 162px;
@@ -73,7 +83,7 @@
 }
 
 .category-form-box {
-  margin-left: 50px;
+  margin-left: 250px;
 }
 
 .post-form-box {
@@ -181,6 +191,10 @@
   font-size: 16px;
 }
 
+.input-price::value {
+    text-align:right;
+}
+
 .input-price::placeholder {
     text-align:right;
 }
@@ -220,46 +234,4 @@
 
 .sell-btn-gray:hover {
   opacity: 0.75;
-}
-
-
-
-
-.hidden_box {
-  background-color: pink;
-  width: 300px;
-  height: 200px;
-}
-/*ボタン装飾*/
-.hidden_box label {
-    padding: 15px;
-    font-weight: bold;
-    border: solid 2px black;
-    cursor :pointer;
-}
-
-/*ボタンホバー時*/
-.hidden_box label:hover {
-    background: #efefef;
-}
-
-/*チェックは見えなくする*/
-.hidden_box input {
-    display: none;
-}
-
-/*中身を非表示にしておく*/
-.hidden_box .hidden_show {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.8s;
-}
-
-/*クリックで中身表示*/
-.hidden_box input:checked ~ .hidden_show {
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
 }

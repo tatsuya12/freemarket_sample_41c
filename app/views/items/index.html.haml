@@ -28,22 +28,46 @@
         .sld4.sld__visual
     #sld_nav
     %a#sld_prev.sld_dir_btn &lt;
-    %a#sld_next.sld_dir_btn &gt;
+    %a#sld_next.sld_dirc_btn &gt;
 
 
   %section.pickup-container
     %h2.pickup-head
       ピックアップカテゴリー
-    = render partial: "top-OneRow"
-    %h2.pickup-head
-      ピックアップブランド
-    = render partial: "top-OneRow"
+    %section.items-box-container.clearfix
+      %h3.text-center
+        = link_to "レディース 新着アイテム", root_path
+    .items-box-content.clearfix
+      = render partial: 'top-ForOnePerson', collection: @items, as: :item
+    .view-all
+      =link_to "すべての商品を見る", root_path
+    %section.items-box-container.clearfix
+      %h3.text-center
+        = link_to "メンズ 新着アイテム", root_path
+    .items-box-content.clearfix
+      = render partial: 'top-ForOnePerson', collection: @items, as: :item
+    .view-all
+      =link_to "すべての商品を見る", root_path
+    %section.items-box-container.clearfix
+      %h3.text-center
+        = link_to "ベビー・キッズ 新着アイテム", root_path
+    .items-box-content.clearfix
+      = render partial: 'top-ForOnePerson', collection: @items, as: :item
+    .view-all
+      =link_to "すべての商品を見る", root_path
+    %section.items-box-container.clearfix
+      %h3.text-center
+        = link_to "コスメ・香水・美容 新着アイテム", root_path
+    .items-box-content.clearfix
+      = render partial: 'top-ForOnePerson', collection: @items, as: :item
+    .view-all
+      =link_to "すべての商品を見る", root_path
+
+      %h2.pickup-head
+        ピックアップブランド
 
 
   %section.pickup-container
-  .footer-sell-btn
-    .footer-sell-btn__wrapper
-      %div 出品
-      %i.fa.fa-camera
+  = render "camera-button"
 = render "app-banner"
 = render "footer"

@@ -22,7 +22,8 @@ class ItemsController < ApplicationController
                      introduction: item_params[:introduction],
                      category_id: category.id,
                      brand_id: brand.id,
-                     seller_id: current_user.id)
+                     seller_id: current_user.id
+                    )
     # @item.seller_id = current_user.id
 
     if @item.save

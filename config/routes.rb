@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get :detail
+      post :pay
     end
   end
 end

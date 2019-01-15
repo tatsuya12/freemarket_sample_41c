@@ -42,7 +42,7 @@
   vertical-align: top;
 }
 
-.sell-upload-drop-box.have-item-0 {
+.sell-dropbox {
   position: relative;
   min-height: 162px;
   background: #f5f5f5;
@@ -58,9 +58,19 @@
  justify-content: center; /* 横方向中央揃え */
 }
 
+.dz-message.needsclick {
+  width: 620px;
+  min-height: 162px;
+  z-index: 100;
+}
 .visible-pc {
   font-weight: bold;
-  color: $text-color
+  color: $text-color;
+  z-index: 0;
+  position: absolute;
+  top: 70px;
+  left: 200px;
+  margin:  auto;
 }
 
 .sell-content {
@@ -138,6 +148,7 @@
 .sell-btn-box {
   button.btn-default.btn-red {
   width: 100%;
+  background-color: $red;
   }
   &__text {
   	div {
@@ -234,4 +245,15 @@
 
 .sell-btn-gray:hover {
   opacity: 0.75;
+}
+
+.dropzone {
+  border: 2px dashed #b4bcc2;
+  border-radius: 4px;
+
+  .dz-message {
+    font-size: 16px;
+    text-align: center;
+    margin: 0
+  }
 }

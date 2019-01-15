@@ -5,5 +5,4 @@ class Item < ApplicationRecord
   has_one :delivery, dependent: :destroy
   belongs_to :brand
   belongs_to :category
-  mount_uploader :image, ImageUploader
 end

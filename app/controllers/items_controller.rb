@@ -28,8 +28,8 @@ class ItemsController < ApplicationController
   end
 
   def sell
+    @item = Item.new
   end
-
 
   private
     def item_params

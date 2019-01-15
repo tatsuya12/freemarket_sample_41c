@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get :detail
+      get :sell
     end
   end
 

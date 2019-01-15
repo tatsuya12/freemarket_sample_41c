@@ -45,20 +45,20 @@
       %tr
         %th 配送料の負担
         %td
-          = @item.delivery.shipping_charge
+          = @item.shipping_charge
       %tr
         %th 配送の方法
         %td
-          = @item.delivery.shipping_method
+          = @item.shipping_method
       %tr
         %th 配送元地域
         %td
           = link_to root_path do
-            = @item.delivery.origin_region
+            = @item.origin_region
       %tr
         %th 発送日の目安
         %td
-          = @item.delivery.shipping_days
+          = @item.shipping_days
 
   .item-price-box.text-center
     %span.item-price.bold

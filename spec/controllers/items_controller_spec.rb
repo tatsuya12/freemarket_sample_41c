@@ -1,30 +1,65 @@
 require "rails_helper"
 
-describe ItemsController do
-    describe 'GET #index' do
-        let(:user) {create(:user)}
-        let(:category) {create(:category)}
-        let(:brand) {create(:brand)}
-
-        it "renders the :index template" do
-            get :index
-            expect(response).to render_template :index
-        end
-        it "assgins the requested item to @item" do
-            item = create(:item, seller_id: user.id, buyer_id: user.id, category_id: category.id, brand_id: brand.id)
-            get :index
-            expect(assigns(:items)).to eq([item])
-        end
-        it "populates an array of items ordered by created_at DESC" do
-            items = create_list(:item, 4, seller_id: user.id, buyer_id: user.id, category_id: category.id, brand_id: brand.id)
-            get :index
-            expect(assigns(:items)).to match(items.sort{ |a, b| b.created_at <=> a.created_at } )
-        end
-    end
-end
-
-
 describe ItemsController, type: :controller do
+  describe 'GET #index' do
+      let(:user) {create(:user)}
+      let(:category) {create(:category)}
+      let(:brand) {create(:brand)}
+
+      it "renders the :index template" do
+          get :index
+          expect(response).to render_template :index
+      end
+      it "assgins the requested item to @item" do
+          item = create(:item, seller_id: user.id, buyer_id: user.id, category_id: category.id, brand_id: brand.id)
+          get :index
+          expect(assigns(:items)).to eq([item])
+      end
+      it "populates an array of items ordered by created_at DESC" do
+          items = create_list(:item, 4, seller_id: user.id, buyer_id: user.id, category_id: category.id, brand_id: brand.id)
+          get :index
+          expect(assigns(:items)).to match(items.sort{ |a, b| b.created_at <=> a.created_at } )
+      end
+  end
+
+  describe 'POST #create' do
+    let(:item){ attributes_for(:item,
+                  seller_id: user.id,
+                  brand_id: brand.id,
+                  category_id: category.id) }
+    let(:user) { create(:user) }
+    let(:brand) { create(:brand) }
+    let(:image) { create(:image) }
+    let(:category) { create(:category) }
+    let(:delivery) { create(:delivery, item_id: item.id) }
+    # let(:params) { name: "テスト１"
+    #                }
+    # before do
+    #   @item = attributes_for(:item)
+    # end
+    # let(:item) {
+    #              create(
+    #               :item,
+    #               buyer_id: user.id,
+    #               seller_id: user.id,
+    #               brand_id: brand.id,
+                  # category_id: category.id
+    #             )
+    it "saves the new item in tne database" do
+      login user
+      expect{
+        # post :create, item: attributes_for(:item, buyer_id: user.id, seller_id: user.id, brand_id: brand.id, category_id: category.id )
+        post :create, prams: { item: item }
+        # params: { item: attributes_for(:item, { name: 'テスト１', price: '1000', status: "出品中", size: "M", condition: "新品、未使用", introduction: "商品紹介です"  }), buyer_id: user.id, seller_id: user.id, brand_id: brand.id, category_id: category.id }
+      }.to change(Item, :count).by(1)
+    end
+
+
+
+
+  end
+
+
   describe 'GET #show' do
     let(:user) { create(:user) }
     let(:brand) { create(:brand) }

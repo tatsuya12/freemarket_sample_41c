@@ -87,4 +87,6 @@ gem 'omniauth-google-oauth2'
 gem 'ancestry'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'payjp'
+gem "jquery-rails"
 gem 'ransack'

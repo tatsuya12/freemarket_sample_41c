@@ -22,5 +22,5 @@
 @import "registration_header";
 @import "sign_in";
 @import "sign_up_top";
-// *= require dropzone/basic
-// *= require dropzone/dropzone
+@import "dropzone/basic";
+@import "dropzone/dropzone";

@@ -43,10 +43,7 @@
 }
 
 .sell-dropbox {
-  position: relative;
   min-height: 162px;
-  background: #f5f5f5;
-  border: 1px dashed #ccc;
   text-align: center;
   cursor: pointer;
   vertical-align: middle;
@@ -58,19 +55,24 @@
  justify-content: center; /* 横方向中央揃え */
 }
 
-.dz-message.needsclick {
+.dropzone.needsclick {
   width: 620px;
   min-height: 162px;
-  z-index: 100;
+  color: #f5f5f5;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  style {
+    display: none;
+  }
 }
+
 .visible-pc {
   font-weight: bold;
   color: $text-color;
-  z-index: 0;
+  text-align: center;
+  top: 379px;
+  right: 683px;
   position: absolute;
-  top: 70px;
-  left: 200px;
-  margin:  auto;
 }
 
 .sell-content {
@@ -135,6 +137,7 @@
   border: 1px solid #ccc;
   background: 0;
   font-size: 16px;
+  font-weight: lighter;
   line-height: 1.5;
   cursor: pointer;
   margin-top: 10px;
@@ -146,9 +149,12 @@
 }
 
 .sell-btn-box {
-  button.btn-default.btn-red {
-  width: 100%;
+  .btn-sell.btn-red {
+  width: 620px;
+  height: 50px;
   background-color: $red;
+  border: 1px dashed $red;
+  color: #fff;
   }
   &__text {
   	div {
@@ -245,15 +251,4 @@
 
 .sell-btn-gray:hover {
   opacity: 0.75;
-}
-
-.dropzone {
-  border: 2px dashed #b4bcc2;
-  border-radius: 4px;
-
-  .dz-message {
-    font-size: 16px;
-    text-align: center;
-    margin: 0
-  }
 }

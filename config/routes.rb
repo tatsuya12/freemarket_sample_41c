@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
     member do
       get :detail
+      get :item_page
       post :pay
     end
   end

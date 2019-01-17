@@ -75,6 +75,14 @@ class ItemsController < ApplicationController
     redirect_to action: :index
   end
 
+  def search
+   @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
+   # respond_to do |format|
+   #   format.html
+   #   format.json
+   # end
+  end
+
 
   private
     def item_params

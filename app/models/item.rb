@@ -13,6 +13,5 @@ class Item < ApplicationRecord
   validates :status, presence: true
   validates :shipping_charge, presence: true
   validates :shipping_days, presence: true
-  # validates :shipping_method, presence: true
   validates :origin_region, presence: true
 end

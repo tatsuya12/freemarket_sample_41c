@@ -15,7 +15,7 @@
           %ul.settings-payment-list
         %section.settings-add-card
           .l-single-content
-            = link_to(credit_detail_mypage_path, class: 'submit_button') do
+            = link_to(credit_detail_mypage_path(current_user.id), class: 'submit_button') do
               = fa_icon( 'credit-card', text: " クレジットカードを追加する", class: 'fa-fw card' )
         .settings-not-regist
           = link_to root_path do

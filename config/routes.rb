@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   :unlocks => 'users/unlocks'
 }
  devise_scope :user do
-  get 'sign_in', :to => 'sers/sessions#new'
-  get 'sign_out', :to => 'users/sessions#destroy'
+  get 'sign_in', :to => 'users/sessions#new'
+  delete 'sign_out', :to => 'users/sessions#destroy'
  end
 
 
@@ -27,10 +27,14 @@ Rails.application.routes.draw do
  end
 
 
- root 'items#index'
- resources :items do
-   collection do
-     get :detail
-   end
- end
+  root 'items#index'
+
+  resources :items do
+
+    member do
+      get :detail
+      post :pay
+    end
+  end
+
 end

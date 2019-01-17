@@ -6,42 +6,18 @@ class ItemsController < ApplicationController
 
   def sell
     @item = Item.new
+    @item.images.build
   end
 
+
   def create
-    # @item = Item.new(item_params)
-    brand = Brand.find_by(name: item_params[:brand])
-    # @item.brand_id = brand.id
-    category = Category.find_by(name: item_params[:category])
-    # @item.category_id = category.id
-    @item = Item.new( name: item_params[:name],
-                     price: item_params[:price],
-                     status: item_params[:status],
-                     size: item_params[:size],
-                     condition: item_params[:condition],
-                     introduction: item_params[:introduction],
-                     category_id: category.id,
-                     brand_id: brand.id,
-                     seller_id: current_user.id
-                    )
-    # @item.seller_id = current_user.id
-
-    if @item.save
-      redirect_to detail_item_path(@item)
+    @item = Item.new(item_params)
+    if @item.save!
+      redirect_to item_path(@item)
     else
-      render :index
+      flash.now[:alert] = 'メッセージの送信に失敗しました'
+      render :sell
     end
-
-    # name: item_params[:name],
-    #                  price: item_params[:price],
-    #                  status: item_params[:status],
-    #                  size: item_params[:size],
-    #                  condition: item_params[:condition],
-    #                  introduction: item_params[:introduction],
-    #                  category: item_params[:category],
-    #                  seller_id: current_user.id
-
-    # Item.create(name: item_params[:name], price: item_params[:price], status: item_params[:status], size: item_params[:size], condition: item_params[:condition], introduction: item_params[:introduction], category: item_params[:category], seller_id: current_user.id)
   end
 
   def show
@@ -50,12 +26,15 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @images = @item.images
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.seller_id == current_user.id
-      item.update(item_params)
+    @item = Item.find(params[:id])
+    if @item.update(update_item_params)
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 
@@ -65,7 +44,13 @@ class ItemsController < ApplicationController
 
 
   private
+
     def item_params
-      params.permit(:name, :price, :status, :size, :condition, :introduction, :category, :brand, :image)
+      params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image]).merge(seller_id: current_user.id)
     end
+
+    def update_item_params
+      params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
+    end
+
 end

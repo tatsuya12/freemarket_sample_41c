@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
     member do
       get :detail
+      post :pay
     end
   end
 

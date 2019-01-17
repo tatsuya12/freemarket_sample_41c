@@ -43,7 +43,14 @@
 }
 
 .sell-dropbox {
+<<<<<<< HEAD
   min-height: 162px;
+=======
+  position: relative;
+  min-height: 162px;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+>>>>>>> master
   text-align: center;
   cursor: pointer;
   vertical-align: middle;
@@ -55,6 +62,7 @@
  justify-content: center; /* 横方向中央揃え */
 }
 
+<<<<<<< HEAD
 .dropzone.needsclick {
   width: 620px;
   min-height: 162px;
@@ -73,6 +81,21 @@
   top: 379px;
   right: 683px;
   position: absolute;
+=======
+.dz-message.needsclick {
+  width: 620px;
+  min-height: 162px;
+  z-index: 100;
+}
+.visible-pc {
+  font-weight: bold;
+  color: $text-color;
+  z-index: 0;
+  position: absolute;
+  top: 70px;
+  left: 200px;
+  margin:  auto;
+>>>>>>> master
 }
 
 .sell-content {
@@ -137,7 +160,10 @@
   border: 1px solid #ccc;
   background: 0;
   font-size: 16px;
+<<<<<<< HEAD
   font-weight: lighter;
+=======
+>>>>>>> master
   line-height: 1.5;
   cursor: pointer;
   margin-top: 10px;
@@ -155,6 +181,7 @@
   background-color: $red;
   border: 1px dashed $red;
   color: #fff;
+
   }
   &__text {
   	div {

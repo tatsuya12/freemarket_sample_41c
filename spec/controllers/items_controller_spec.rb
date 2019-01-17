@@ -146,6 +146,28 @@ describe ItemsController, type: :controller do
       expect(item.shipping_days).to eq("編集で発送")
     end
   end
+
+  describe ItemsController do
+    describe 'DELETE #destroy' do
+      let(:user) { create(:user) }
+      let(:brand) { create(:brand) }
+      let(:category) { create(:category) }
+      let!(:item) {
+                   create(
+                    :item,
+                    seller_id: user.id,
+                    brand_id: brand.id,
+                    category_id: category.id
+                  )
+                 }
+
+      it 'delete the new item from tne database' do
+        login user
+        expect{ item.destroy }.to change{ Item.count }.by(-1)
+      end
+
+    end
+  end
 end
 
 

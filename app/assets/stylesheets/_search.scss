@@ -1,5 +1,4 @@
 .search-container{
-  // position: relative;
   margin: 40px auto 0;
   display: flex;
   flex-direction: row-reverse;
@@ -39,7 +38,6 @@
                 background-color: $white;
                 &__name{
                   overflow: hidden;
-                  position: relative;
                   font-weight: 400;
                   height: 3em;
                   line-height: 1.5;
@@ -72,6 +70,7 @@
   &__l-side{
     width: 280px;
     margin: 0 40px 0 0;
-    background-color: yellow;
+    background-color: gray;
+    height: 1000px;
   }
 }

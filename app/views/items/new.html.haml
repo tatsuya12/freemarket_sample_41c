@@ -11,7 +11,7 @@
       .sell-container__upload--max
         最大10枚までアップロードできます
       .sell-dropbox
-        = f.fields_for :image do |i|
+        = f.fields_for :images do |i|
           .dz-message
             .fallback
               = i.file_field :image, {class:'dropzone needsclick', id: "item-dropzone"}

@@ -49,7 +49,6 @@ class ItemsController < ApplicationController
     redirect_to action: :index
   end
 
-
   def profile
   end
 
@@ -67,4 +66,9 @@ class ItemsController < ApplicationController
     def update_item_params
       params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
     end
+
+    def update_item_params
+      params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
+    end
+
 end

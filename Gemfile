@@ -87,12 +87,10 @@ gem 'omniauth-google-oauth2'
 gem 'ancestry'
 gem 'carrierwave'
 gem 'mini_magick'
-<<<<<<< HEAD
 gem 'dropzonejs-rails', '~> 0.8.4'
 gem 'enum_select_rails', '~> 0.2.0'
 gem 'enum_help'
-=======
 gem 'payjp'
 gem "jquery-rails"
-
->>>>>>> master
+gem 'payjp'
+gem "jquery-rails"

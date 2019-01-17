@@ -35,5 +35,5 @@ end
 
 100.times do |number|
   Image.create(image: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m68416746432_1.jpg?1545554718", item_id: "#{number}")
->>>>>>> master
+
 end

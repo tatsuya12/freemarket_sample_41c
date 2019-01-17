@@ -6,15 +6,9 @@ class ItemsController < ApplicationController
   	@items = Item.includes(:images).limit(4).order("created_at DESC")
   end
 
-  def sell
-    @item = Item.new
-    @item.images.build
-  end
-
   def item_page
     @item = Item.find(params[:id])
   end
-
 
   def create
     @item = Item.new(item_params)

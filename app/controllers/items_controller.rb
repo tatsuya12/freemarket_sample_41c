@@ -13,13 +13,17 @@ class ItemsController < ApplicationController
   	@items = Item.includes(:images).limit(4).order("created_at DESC")
   end
 
+  def item_page
+    @item = Item.find(params[:id])
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save!
       redirect_to item_path(@item)
     else
-      flash.now[:alert] = 'メッセージの送信に失敗しました'
-      render :sell
+      flash.now[:notice] = '商品出品に失敗しました'
+      render :new
     end
   end
 
@@ -56,8 +60,16 @@ class ItemsController < ApplicationController
     redirect_to action: :index
   end
 
-  def profile
+  def destroy
+    item = Item.find(params[:id])
+    if item.seller_id == current_user.id
+      item.destroy!
+      redirect_to root_path
+    else
+      render :item_page
+    end
   end
+
 
   def new
     @item = Item.new
@@ -69,10 +81,6 @@ class ItemsController < ApplicationController
 
     def item_params
       params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image]).merge(seller_id: current_user.id)
-    end
-
-    def update_item_params
-      params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
     end
 
     def update_item_params

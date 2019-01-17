@@ -67,6 +67,11 @@ class ItemsController < ApplicationController
     else
       render :item_page
     end
+
+
+  def new
+    @item = Item.new
+    @item.images.build
   end
 
 

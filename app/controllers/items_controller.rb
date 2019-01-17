@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+  	render :layout => 'no-pankuzu'
   end
 
 end

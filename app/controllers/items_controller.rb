@@ -6,6 +6,11 @@ class ItemsController < ApplicationController
   	@items = Item.includes(:images).limit(4).order("created_at DESC")
   end
 
+  def sell
+    @item = Item.new
+    @item.images.build
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save!
@@ -56,6 +61,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
   end
+
 
   private
 

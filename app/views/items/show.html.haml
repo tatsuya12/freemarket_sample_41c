@@ -14,7 +14,7 @@
         %th 出品者
         %td
           = link_to root_path do
-            = @item.buyer.name
+            = @item.seller.name
           .item-rates
             .item-rates__ratings
               = fa_icon ('smile-o'), class: 'smile-pink'
@@ -28,7 +28,8 @@
       %tr
         %th カテゴリー
         %td
-          = link_to "おもちゃ・ホビー・グッズ(@item.category.name)", root_path
+          = link_to root_path do
+            = @item.category.name
           = link_to root_path do
             .item-detail-table-sub-category
               = fa_icon( 'angle-right', text: " タレントグッズ", class: 'fa-fw' )
@@ -37,11 +38,11 @@
               = fa_icon( 'angle-right', text: " アイドル", class: 'fa-fw' )
       %tr
         %th ブランド
-        %td = @item.brand&.name
+        %td
       %tr
         %th 商品の状態
         %td
-          = @item.condition
+          = @item.status
       %tr
         %th 配送料の負担
         %td

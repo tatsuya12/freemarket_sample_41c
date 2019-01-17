@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
     @item.images.build
   end
 
-
   def create
     @item = Item.new(item_params)
     if @item.save!
@@ -55,11 +54,23 @@ class ItemsController < ApplicationController
     redirect_to action: :index
   end
 
+  def profile
+  end
+
+  def new
+    @item = Item.new
+    @item.images.build
+  end
+
 
   private
 
     def item_params
       params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image]).merge(seller_id: current_user.id)
+    end
+
+    def update_item_params
+      params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
     end
 
     def update_item_params

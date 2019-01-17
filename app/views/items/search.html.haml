@@ -27,30 +27,6 @@
                     (税込)
   .search-container__l-side
 
-/ #yjMain
-/   %item.section
-/     .container
-/       %header.header.header--section
-/         %h2.text-middle
-/           %i.icon-movie.color-gray-light>
-/           検索結果
-/       %ul.listview.js-lazy-load-images
-/         - @items.each do |item|
-/           %li
-/             %a.listview__element--right-icon{:href => "", :title => item.name}
-/               .position-right.p1em
-/                 %i.icon-chevron-right.color-sub
-/               .row.no-space-bottom
-/                 .col2
-/                   .thumbnail.thumbnail--movies
-/                     .thumbnail__figure{:style => "background-image: url(https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m68416746432_1.jpg?1545554718);", :name => item.name}
-/                 .col6.push6
-/                   %h3.text-middle.text-break
-/                     %span.color-sub= item.name
-/                   %p.text-xsmall.text-overflow
-/                     = item.introduction
-
-
 
 
 = render 'app-banner'

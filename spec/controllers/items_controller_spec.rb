@@ -23,40 +23,23 @@ describe ItemsController, type: :controller do
   end
 
   describe 'POST #create' do
-    let(:item){ attributes_for(:item,
-                  seller_id: user.id,
-                  brand_id: brand.id,
-                  category_id: category.id) }
     let(:user) { create(:user) }
     let(:brand) { create(:brand) }
-    let(:image) { create(:image) }
+    let(:image) { create(:image, item_id: item.id) }
     let(:category) { create(:category) }
-    let(:delivery) { create(:delivery, item_id: item.id) }
-    # let(:params) { name: "テスト１"
-    #                }
-    # before do
-    #   @item = attributes_for(:item)
-    # end
-    # let(:item) {
-    #              create(
-    #               :item,
-    #               buyer_id: user.id,
-    #               seller_id: user.id,
-    #               brand_id: brand.id,
-                  # category_id: category.id
-    #             )
+
     it "saves the new item in tne database" do
       login user
       expect{
-        # post :create, item: attributes_for(:item, buyer_id: user.id, seller_id: user.id, brand_id: brand.id, category_id: category.id )
-        post :create, prams: { item: item }
-        # params: { item: attributes_for(:item, { name: 'テスト１', price: '1000', status: "出品中", size: "M", condition: "新品、未使用", introduction: "商品紹介です"  }), buyer_id: user.id, seller_id: user.id, brand_id: brand.id, category_id: category.id }
+        post :create,
+             item: attributes_for(:item,
+                                   buyer_id: user.id,
+                                   seller_id: user.id,
+                                    brand_id: brand.id,
+                                    category_id: category.id
+                                  )
       }.to change(Item, :count).by(1)
     end
-
-
-
-
   end
 
 
@@ -73,7 +56,6 @@ describe ItemsController, type: :controller do
                   category_id: category.id
                 )
                }
-    let(:delivery) { create(:delivery, item_id: item.id) }
     before do
       get :show, params: { id: item }
     end
@@ -101,8 +83,6 @@ describe ItemsController, type: :controller do
                   category_id: category.id
                 )
                }
-    let(:delivery) { create(:delivery, item_id: item.id) }
-
     before do
       get :edit, params: { id: item }
     end
@@ -120,28 +100,39 @@ describe ItemsController, type: :controller do
     let(:user) { create(:user) }
     let(:brand) { create(:brand) }
     let(:category) { create(:category) }
-    let(:item) {
+    let!(:item) {
                  create(
                   :item,
-                  buyer_id: user.id,
                   seller_id: user.id,
                   brand_id: brand.id,
                   category_id: category.id
                 )
                }
-    let(:delivery) { create(:delivery, item_id: item.id) }
+    let(:updated_attributes) do
+      {
+        name: "アイテム編集",
+        price: "300",
+        status: "ステータス２",
+        size: "L",
+        condition: "中古",
+        introduction: "アイテム説明文編集",
+        shipping_charge: "送料編集",
+        origin_region: "東京都編集",
+        shipping_method: "速達編集",
+        shipping_days: "編集で発送"
+      }
+    end
 
     it 'saves updated item' do
       login user
-      item = create(:item, buyer_id: user.id, seller_id: user.id, brand_id: brand.id, category_id: category.id )
       expect do
-        patch :update, params: { id: item, name: "アイテム編集", price: "300", status: "ステータス２", size: "L", condition: "中古", introduction: "アイテム説明文編集" }
+        patch :update, params: { id: item.id, item: updated_attributes }, session: {}
         end.to change(Item, :count).by(0)
       end
 
     it "change item's attribute" do
       login user
-      patch :update, params: { id: item, name: "アイテム編集", price: "300", status: "ステータス２", size: "L", condition: "中古", introduction: "アイテム説明文編集" }
+      patch :update, params: { id: item.id, item: updated_attributes }, session: {}
       item.reload
       expect(item.name).to eq("アイテム編集")
       expect(item.price).to eq(300)
@@ -149,6 +140,10 @@ describe ItemsController, type: :controller do
       expect(item.size).to eq("L")
       expect(item.condition).to eq("中古")
       expect(item.introduction).to eq("アイテム説明文編集")
+      expect(item.shipping_charge).to eq("送料編集")
+      expect(item.origin_region).to eq("東京都編集")
+      expect(item.shipping_method).to eq("速達編集")
+      expect(item.shipping_days).to eq("編集で発送")
     end
   end
 end

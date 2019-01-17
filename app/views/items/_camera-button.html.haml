@@ -1,4 +1,5 @@
 .footer-sell-btn
-  .footer-sell-btn__wrapper
-    %div 出品
-    %i.fa.fa-camera
+  .footer-sell-btn__wrapper.sell-btn
+    = link_to(new_item_path, class: 'sell-btn') do
+      %div 出品
+      %i.fa.fa-camera

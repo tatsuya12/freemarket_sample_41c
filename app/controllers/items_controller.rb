@@ -11,13 +11,17 @@ class ItemsController < ApplicationController
     @item.images.build
   end
 
+  def item_page
+    @item = Item.find(params[:id])
+  end
+
 
   def create
     @item = Item.new(item_params)
     if @item.save!
       redirect_to item_path(@item)
     else
-      flash.now[:alert] = 'メッセージの送信に失敗しました'
+      flash.now[:notice] = '商品出品に失敗しました'
       render :sell
     end
   end
@@ -53,6 +57,16 @@ class ItemsController < ApplicationController
       currency: 'jpy'
     )
     redirect_to action: :index
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    if item.seller_id == current_user.id
+      item.destroy!
+      redirect_to root_path
+    else
+      render :item_page
+    end
   end
 
 

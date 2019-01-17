@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
       redirect_to item_path(@item)
     else
       flash.now[:notice] = '商品出品に失敗しました'
-      render :sell
+      render :new
     end
   end
 
@@ -67,6 +67,7 @@ class ItemsController < ApplicationController
     else
       render :item_page
     end
+  end
 
 
   def new

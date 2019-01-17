@@ -1,0 +1,57 @@
+= render 'header'
+
+.search-container
+  .search-container__l-content
+    .search-container__l-content__items
+      %header.search-container__l-content__items__head
+        検索結果
+      .search-container__l-content__items__result
+        .items-box-parent
+          - @items.each do |item|
+            .items-box-child
+              = link_to "" do
+                .child-image
+                  - item.images.first(1).each do |image|
+                    =image_tag(image.image, class: "first-image")
+                .child-content
+                  %h3.child-content__name
+                    = item.name
+                  .child-content__bottom
+                    .child-content__bottom__price
+                      = "¥#{item.price}"
+                    .child-content__bottom__likes
+                      %i.fa.fa-heart
+                        %span
+                          8
+                  .child-content__tax
+                    (税込)
+  .search-container__l-side
+
+/ #yjMain
+/   %item.section
+/     .container
+/       %header.header.header--section
+/         %h2.text-middle
+/           %i.icon-movie.color-gray-light>
+/           検索結果
+/       %ul.listview.js-lazy-load-images
+/         - @items.each do |item|
+/           %li
+/             %a.listview__element--right-icon{:href => "", :title => item.name}
+/               .position-right.p1em
+/                 %i.icon-chevron-right.color-sub
+/               .row.no-space-bottom
+/                 .col2
+/                   .thumbnail.thumbnail--movies
+/                     .thumbnail__figure{:style => "background-image: url(https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m68416746432_1.jpg?1545554718);", :name => item.name}
+/                 .col6.push6
+/                   %h3.text-middle.text-break
+/                     %span.color-sub= item.name
+/                   %p.text-xsmall.text-overflow
+/                     = item.introduction
+
+
+
+
+= render 'app-banner'
+= render 'footer'

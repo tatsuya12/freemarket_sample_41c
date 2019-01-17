@@ -69,6 +69,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    # @records = YAML.load_file("select.yml")
   end
 
   private

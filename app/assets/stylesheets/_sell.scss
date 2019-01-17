@@ -43,6 +43,10 @@
 }
 
 .sell-dropbox {
+<<<<<<< HEAD
+  min-height: 162px;
+=======
+>>>>>>> master
   position: relative;
   min-height: 162px;
   background: #f5f5f5;
@@ -58,6 +62,27 @@
  justify-content: center; /* 横方向中央揃え */
 }
 
+<<<<<<< HEAD
+.dropzone.needsclick {
+  width: 620px;
+  min-height: 162px;
+  color: #f5f5f5;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  style {
+    display: none;
+  }
+}
+
+.visible-pc {
+  font-weight: bold;
+  color: $text-color;
+  text-align: center;
+  top: 379px;
+  right: 683px;
+  position: absolute;
+=======
+>>>>>>> master
 .dz-message.needsclick {
   width: 620px;
   min-height: 162px;
@@ -135,6 +160,10 @@
   border: 1px solid #ccc;
   background: 0;
   font-size: 16px;
+<<<<<<< HEAD
+  font-weight: lighter;
+=======
+>>>>>>> master
   line-height: 1.5;
   cursor: pointer;
   margin-top: 10px;
@@ -146,6 +175,15 @@
 }
 
 .sell-btn-box {
+<<<<<<< HEAD
+  .btn-sell.btn-red {
+  width: 620px;
+  height: 50px;
+  background-color: $red;
+  border: 1px dashed $red;
+  color: #fff;
+=======
+>>>>>>> master
   button.btn-default.btn-red {
   width: 100%;
   }

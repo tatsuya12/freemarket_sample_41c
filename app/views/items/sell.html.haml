@@ -11,13 +11,14 @@
       .sell-container__upload--max
         最大10枚までアップロードできます
       .sell-dropbox
-        = f.fields_for :images do |i|
-          .dz-message
-            .fallback
-              = i.file_field :image, {class:'dropzone needsclick', id: "item-dropzone"}
-      %pre.visible-pc
-        ドラッグアンドドロップ
-        またはクリックしてファイルをアップロード
+        = f.fields_for :images, html: {class:'dropzone', id: "item-dropzone"} do |i|
+          .dz-message.needsclick
+            %pre.visible-pc
+              ドラッグアンドドロップ
+              またはクリックしてファイルをアップロード
+          .fallback
+            = i.file_field :image
+
     .sell-content
       .form-group
         %label
@@ -44,14 +45,8 @@
               必須
             .select-wrap
           %p
-            =f.collection_select :category_id, Category.roots.order(:name), :id, :name, {}, {class: "select-default"}
+            = f.collection_select :category_id, Category.all, :id, :name, {} ,{class: "select-default"}
             %i.icon-arrow-bottom
-            .select-wrap
-              %p
-            =f.collection_select :category_id, Category.order(:name), :id, :name, {}, {class: "select-default"}
-            .select-wrap
-              %p
-            =f.collection_select :category_id, Category.order(:name), :id, :name, {}, {class: "select-default"}
         .form-group
           %label
             サイズ
@@ -60,7 +55,7 @@
             .select-wrap
           %p
             = f.select :size, [['---'], ['XXS以下'], ['XXS（SS)'], ['S'], ['M'], ['L'], ['XL(LL)'], ['2XL(3L)'], ['3XL(4L)'], ['4XL(5L)以上'], ['FREE SIZE']], {} ,{class: "select-default"}
-          %i.icon-arrow-bottom
+            %i.icon-arrow-bottom
         .form-group
           %label
             ブランド
@@ -154,7 +149,12 @@
               また、出品をもちまして
               =link_to "加盟店規約", ""
               に同意したことになります。
-        = f.submit "編集する", {class: 'btn-sell btn-red'}
+        = f.submit "出品する", class: 'btn-default btn-red'
+        %button.btn-default.btn-red{type: "submit"}
+          出品する
         .sell-btn-gray
           もどる
 = render 'purchase_footer'
+
+%select#selPref{:onchange => "selPref(this);"}
+%select#selCity

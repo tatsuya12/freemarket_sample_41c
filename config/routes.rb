@@ -28,9 +28,14 @@ Rails.application.routes.draw do
 
 
   root 'items#index'
+
   resources :items do
+
     member do
       get :detail
+      get :item_page
+      post :pay
     end
   end
+
 end

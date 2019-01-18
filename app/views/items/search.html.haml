@@ -4,13 +4,15 @@
   .search-container__l-content
     .search-container__l-content__items
       %header.search-container__l-content__items__head
-        = "検索結果 #{@items.length}件"
+        - if @items.size == 0
+          = "検索結果 0件"
+        - else
+          = "検索結果 1 ~ #{@items.length}件"
       .search-container__l-content__items__result
         .items-box-parent
           - @items.each do |item|
             = render partial: "search_result", locals: { item: item }
   .search-container__l-side
-
 
 
 = render 'app-banner'

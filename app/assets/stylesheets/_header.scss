@@ -20,11 +20,11 @@ body{
         margin-right: 15px;
       }
       &__right-form{
-        width: calc(100% - (134px + 16px));
+        width: 100%;
         display: flex;
         form{
           position: relative;
-          width: calc(100% - (134px + 16px));
+          width: 100%;
           display: flex;
           .input-search{
             width: 100%;

@@ -23,7 +23,7 @@ swing, modern = jazz.children.create([{name: "swing"}, {name: "modern"}])
  Brand.create(name: "CHANEL")
  Item.create!(name: "アイテム#{i}", price: "100", status: "", size: "M", condition: "新品、未使用", introduction: "テスト商品紹介", brand_id: 1, category_id: 1, seller_id: 1, buyer_id: 2)
  Delivery.create(shipping_charge: 100, origin_region: "発送場所", shipping_days: 3, shipping_method: "配送方法", item_id: "#{i}")
-
+end
 
 5.times do |i|
   User.create(name: "テスト#{i}", email: "test#{i}@gmail.com", password: "password#{i}")

@@ -28,7 +28,7 @@
             top: 50%;
             right: 16px;
             color: #ccc;
-            transform: translate(0, -50%);
+            transform: translate(0, -70%);
             font-size: 20px;
           }
           &:hover{
@@ -38,8 +38,9 @@
               top: 50%;
               right: 16px;
               color: $text-color;
-              transform: translate(5px, -50%);
+              transform: translate(5px, -70%);
               font-size: 21px;
+              transition-duration: 0.3s;
             }
           }
         }

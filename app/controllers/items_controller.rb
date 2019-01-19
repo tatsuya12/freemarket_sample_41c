@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
 
   def pay
     item = Item.find(params[:id])
-    Payjp.api_key = 'sk_test_ac690b2754bd406439b882d0'
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: item.price,
       card: params['payjp-token'],
@@ -74,6 +74,10 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+  end
+
+  def search
+    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
   end
 
 

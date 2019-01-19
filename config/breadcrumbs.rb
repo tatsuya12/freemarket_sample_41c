@@ -30,3 +30,11 @@ crumb :credit_detail do |credit_detail|
   link "クレジットカード情報入力", credit_detail_mypage_path
   parent :credit
 end
+
+crumb :show do |item|
+  link item.name, root_path
+end
+
+crumb :search do |keyword|
+  link keyword, root_path
+end

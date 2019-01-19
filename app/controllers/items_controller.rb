@@ -1,20 +1,16 @@
 class ItemsController < ApplicationController
-  
-  def index
-    render :layout => 'no-pankuzu'
-  end
-
-  def show
-  	render :layout => 'no-pankuzu'
 
   protect_from_forgery :except => [:pay]
 
+  
   def index
   	@items = Item.includes(:images).limit(4).order("created_at DESC")
+    render :layout => 'no-pankuzu'
   end
 
   def item_page
     @item = Item.find(params[:id])
+    render :layout => 'no-header&pankuzu'
   end
 
   def create
@@ -34,6 +30,7 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     @images = @item.images
+    render :layout => 'no-header&pankuzu'
   end
 
   def update
@@ -47,6 +44,7 @@ class ItemsController < ApplicationController
 
   def detail
     @item = Item.find(params[:id])
+    render :layout => 'no-header&pankuzu'
   end
 
   def pay
@@ -74,10 +72,12 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+    render :layout => 'no-header&pankuzu'
   end
 
   def search
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @keyword = params[:keyword]
   end
 
 

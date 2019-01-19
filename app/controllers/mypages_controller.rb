@@ -16,6 +16,7 @@ class MypagesController < ApplicationController
   end
 
   def sign_up_top
+    render :layout => 'no-header&pankuzu'
   end
 
   def show

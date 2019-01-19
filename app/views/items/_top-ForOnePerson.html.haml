@@ -1,5 +1,5 @@
 %section.items-box
-  %a{:href => "https://item.mercari.com/jp/m83837570559/"}
+  = link_to item_path(item.id) do
     .figure.items-box-photo
       - item.images.first(1).each do |image|
         =image_tag(image.image, class: "main-image")

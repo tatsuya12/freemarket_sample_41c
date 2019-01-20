@@ -20,30 +20,35 @@ body{
         margin-right: 15px;
       }
       &__right-form{
-        width: calc(100% - (134px + 16px));
+        width: 100%;
         display: flex;
-        .input-default{
+        form{
+          position: relative;
           width: 100%;
-          height: 36px;
-          padding: 9px 32px 9px 8px;
-          background: #fafafa;
-          border-radius: 4px 0 0 4px / 4px 0 0 4px;
-          border: 1px solid #ccc;
-          line-height: 30px;
-          font-size: 16px;
-          border-right: hidden;
-        }
-        i.fa.fa-search{
-          top: 0px;
-          right: 0px;
-          width: 36px;
-          line-height: 36px;
-          cursor: pointer;
-          text-align: center;
-          background: #fafafa;
-          border-radius: 0 4px 4px 0/ 0 4px 4px 0;
-          border: 0.7px solid #ccc;
-          border-left: hidden;
+          display: flex;
+          .input-search{
+            width: 100%;
+            height: 36px;
+            padding: 9px 32px 9px 8px;
+            background: #fafafa;
+            border-radius: 4px 0 0 4px / 4px 0 0 4px;
+            border: 1px solid #ccc;
+            line-height: 30px;
+            font-size: 16px;
+            border-right: hidden;
+          }
+          button.btn-search{
+            top: 0px;
+            right: 0px;
+            width: 36px;
+            line-height: 36px;
+            cursor: pointer;
+            text-align: center;
+            background: #fafafa;
+            border-radius: 0 4px 4px 0/ 0 4px 4px 0;
+            border: 0.7px solid #ccc;
+            border-left: hidden;
+          }
         }
       }
     }
@@ -83,6 +88,9 @@ body{
               text-decoration: none;
               height: 38px;
               line-height: 32px;
+              &:hover{
+                color: $blue;
+              }
               i.fa.fa-bell{
                 font-size: 17px;
                 speak: none;
@@ -106,6 +114,43 @@ body{
                 font-size: 14px;
                 vertical-align: middle;
               }
+            }
+          }
+        }
+        &__group{
+          display:flex;
+          &__login{
+            margin-bottom: 7px;
+            display: inline-block;
+            a{
+              padding: 0 10px;
+              line-height: 30px;
+            }
+          }
+          .header-btn{
+            border-radius: 4px;
+            text-align: center;
+            padding: 3px 10px;
+              &:hover{
+                text-decoration: none;
+              }
+          }
+          .btn-red{
+            display: block;
+            background: $red;
+            border: 1px solid $red;
+            color: $white;
+            margin-right: 10px;
+          }
+          .btn-blue{
+            display: block;
+            background: $white;
+            color: $blue;
+            border: 1px solid $blue;
+            &:hover{
+              background: $blue;
+              color: $white;
+              transition-duration: 0.5s;
             }
           }
         }

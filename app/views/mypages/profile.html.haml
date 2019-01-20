@@ -1,0 +1,18 @@
+- breadcrumb :mydata
+%main.l-container
+  = render './items/side-bar'
+  .l-content
+    %section.l-profile-container
+      %h2.l-chapter-head プロフィール
+      %form{action: "https://www.mercari.com/jp/mypage/profile/", method: "POST"}
+        .setting-profile-icon
+          %figure
+            %img{height: "60", src: "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", width: "60"}/
+          %input.input-default{name: "", placeholder: "例)AYA☆セール中", type: "text", value: "akihiro"}/
+        .setting-profile-content
+          %textarea.textarea-default{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+          %button.btn-default.btn-red{type: "submit"} 変更する
+
+= render './items/camera-button'
+= render './items/app-banner'
+= render './items/footer'

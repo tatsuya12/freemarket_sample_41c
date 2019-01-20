@@ -54,13 +54,15 @@
       width: 100%;
       background-size: cover;
       background-repeat: no-repeat;
+      background-position: center;
     }
     .sld3.sld__visual {
-      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/top-banner-kusanagi.jpg");
+      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-featured-hobby.jpg");
       height: 430px;
       width: 100%;
       background-size: cover;
       background-repeat: no-repeat;
+      background-position: center;
     }
 
     .sld4.sld__visual {
@@ -156,13 +158,13 @@
     width: 213px;
     margin-left: 20px;
     &-photo {
-      width: 206px;
+      width: 213px;
       height: 213px;
       &__data {
       }
     }
     &-body {
-      width: 190px;
+      width: 181px;
       height: 78px;
       padding: 16px 16px 20px 16px;
       background-color: $white;
@@ -196,10 +198,10 @@
     }
   }
 
-  .is-higher-height.lazyloaded {
-    width: 107%;
-    height: 100%;
-    vertical-align: inherit;
+  .main-image {
+    width: 213px;
+    height: 213px;
+    object-fit: cover;
   }
 
 

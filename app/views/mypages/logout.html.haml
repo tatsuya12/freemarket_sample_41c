@@ -1,0 +1,15 @@
+- breadcrumb :logout
+%main.l-container
+  = render './items/side-bar'
+  .l-content
+    .l-chaoter-container
+      .l-single-inner
+        .l-single-content-button
+          =link_to(sign_out_path, method: :delete, class:"button-red") do
+            ログアウト
+    .footer-sell-btn
+      .footer-sell-btn__wrapper
+        %div 出品
+        %i.fa.fa-camera
+= render './items/app-banner'
+= render './items/footer'

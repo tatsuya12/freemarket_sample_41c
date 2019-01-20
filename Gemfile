@@ -47,7 +47,18 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
+  gem 'rails-controller-testing'
+
 end
+
+# group :test do
+#   gem 'faker'
+# end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -69,3 +80,16 @@ gem 'pry-stack_explorer'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'gretel'
+gem 'omniauth-google-oauth2'
+gem 'ancestry'
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'mini_magick'
+gem 'dropzonejs-rails', '~> 0.8.4'
+gem 'enum_select_rails', '~> 0.2.0'
+gem 'enum_help'
+gem 'payjp'
+gem "jquery-rails"

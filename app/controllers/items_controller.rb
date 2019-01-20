@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     if item.seller_id == current_user.id
-      item.destroy!
+      item.destroy
       redirect_to root_path
     else
       render :item_page
@@ -67,10 +67,15 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+    @category_roots = Category.roots
+    # @midium = @large[0].children
+    # binding.pry
+
   end
 
   def search
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @keyword = params[:keyword]
   end
 
 

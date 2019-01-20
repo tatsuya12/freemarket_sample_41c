@@ -92,4 +92,5 @@ gem 'enum_select_rails', '~> 0.2.0'
 gem 'enum_help'
 gem 'payjp'
 gem "jquery-rails"
+gem 'rails-i18n'
 

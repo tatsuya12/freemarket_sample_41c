@@ -44,14 +44,20 @@
               必須
             .select-wrap
           %p
-            =f.collection_select :category_id, Category.roots.order(:name), :id, :name, {}, {class: "select-default"}
-            %i.icon-arrow-bottom
+            = select_tag :name, options_from_collection_for_select(Category.roots, :id, :name), class: 'select-default'
+
+            / =f.collection_select :category_id, Category.roots, :id, :name, {}, {class: "select-default"}
             .select-wrap
               %p
-            =f.collection_select :category_id, Category.order(:name), :id, :name, {}, {class: "select-default"}
+            - Category.roots.each do |root_category|
+              = select_tag :name, options_from_collection_for_select(Category.children_of(root_category), :id, :name), class: 'select-default'
+              / =f.collection_select :category_id, Category.children_of(root_category), :id, :name, {}, {class: "select-default"}
             .select-wrap
               %p
-            =f.collection_select :category_id, Category.order(:name), :id, :name, {}, {class: "select-default"}
+            - Category.roots.each do |root_category|
+              - Category.children_of(root_category).each do |small|
+                = select_tag :name, options_from_collection_for_select(Category.children_of(small), :id, :name), class: 'select-default'
+                / =f.collection_select :category_id, Category.children_of(small).order(:name), :id, :name, {}, {class: "select-default"}
         .form-group
           %label
             サイズ

@@ -29,7 +29,7 @@
         %th カテゴリー
         %td
           = link_to root_path do
-            = @item.category.name
+            = @item.category.root.name
           = link_to root_path do
             .item-detail-table-sub-category
               = fa_icon( 'angle-right', text: " タレントグッズ", class: 'fa-fw' )

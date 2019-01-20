@@ -14,6 +14,15 @@ tops, pants = ladies.children.create([{name: "トップス"}, {name: "パンツ"
 
 tops.children.create([{name:"Tシャツ"}, {name: "ポロシャツ"}])
 pants.children.create([{name: "デニム"}, {name: "ワークパンツ"}])
+<<<<<<< HEAD
+=======
+
+
+shoes, bags = mens.children.create([{name: "靴"}, {name: "バッグ"}])
+
+shoes.children.create([{name:"スニーカー"}, {name: "サンダル"}])
+bags.children.create([{name: "ショルダーバッグ"}, {name: "トートバッグ"}])
+>>>>>>> erikidori/master
 
 
 shoes, bags = mens.children.create([{name: "靴"}, {name: "バッグ"}])

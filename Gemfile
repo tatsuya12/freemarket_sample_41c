@@ -86,11 +86,15 @@ gem 'gretel'
 gem 'omniauth-google-oauth2'
 gem 'ancestry'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'mini_magick'
 gem 'dropzonejs-rails', '~> 0.8.4'
 gem 'enum_select_rails', '~> 0.2.0'
 gem 'enum_help'
 gem 'payjp'
 gem "jquery-rails"
+<<<<<<< HEAD
 gem 'rails-i18n'
 
+=======
+>>>>>>> erikidori/master

@@ -9,9 +9,6 @@
     &__mypage-nav{
       &__list{
         list-style: none;
-        &__item:first-child{
-          border: 0;
-        }
         &__item{
           display: block;
           position: relative;
@@ -68,18 +65,19 @@
             top: 50%;
             right: 16px;
             color: #ccc;
-            transform: translate(0, -50%);
+            transform: translate(0, -70%);
             font-size: 20px;
             }
             &:hover{
             background-color: #EEEEEE;
               i.fas.fa-chevron-right{
-                position: absolute;
-                top: 50%;
-                right: 16px;
-                color: $text-color;
-                transform: translate(5px, -50%);
-                font-size: 21px;
+              position: absolute;
+              top: 50%;
+              right: 16px;
+              color: $text-color;
+              transform: translate(5px, -70%);
+              font-size: 21px;
+              transition-duration: 0.3s;
               }
             }
           }

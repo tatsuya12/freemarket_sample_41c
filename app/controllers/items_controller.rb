@@ -2,12 +2,15 @@ class ItemsController < ApplicationController
 
   protect_from_forgery :except => [:pay]
 
+  
   def index
   	@items = Item.includes(:images).limit(4).order("created_at DESC")
+    render :layout => 'no-pankuzu'
   end
 
   def item_page
     @item = Item.find(params[:id])
+    render :layout => 'no-header&pankuzu'
   end
 
   def create
@@ -27,6 +30,7 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     @images = @item.images
+    render :layout => 'no-header&pankuzu'
   end
 
   def update
@@ -40,11 +44,12 @@ class ItemsController < ApplicationController
 
   def detail
     @item = Item.find(params[:id])
+    render :layout => 'no-header&pankuzu'
   end
 
   def pay
     item = Item.find(params[:id])
-    Payjp.api_key = 'sk_test_ac690b2754bd406439b882d0'
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: item.price,
       card: params['payjp-token'],
@@ -67,10 +72,12 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+    render :layout => 'no-header&pankuzu'
   end
 
   def search
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @keyword = params[:keyword]
   end
 
 

@@ -1,0 +1,27 @@
+.bread-crumbs {
+  height: 49px;
+  border-top: 1px solid #eee;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 49px;
+  padding-left: 225px;
+  color: $text-color;
+  a:visited {
+    color: #333;
+  }
+  a:link {
+    color: #333;
+    font-weight: normal;
+  }
+  :hover {
+  	opacity: 0.5;
+  }
+}
+
+.fa-angle-right {
+  color: #888;
+  margin: 0 7px 0 7px;
+}

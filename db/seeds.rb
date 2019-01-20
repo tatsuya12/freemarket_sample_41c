@@ -8,11 +8,15 @@
 
 
 
-metal, jazz = Category.create([{name: "metal"}, {name: "jazz"}])
+ladies, mens = Category.create([{name: "レディース"}, {name: "メンズ"}])
 
-melodic, black = metal.children.create([{name: "melodic"}, {name: "black"}])
-melodic.children.create([{name: "melodic-death"}, {name: "melodic-speed"}])
-black.children.create([{name: "symphonic-black"}, {name: "melodic-black"}])
+tops, pants = ladies.children.create([{name: "トップス"}, {name: "パンツ"}])
 
-swing, modern = jazz.children.create([{name: "swing"}, {name: "modern"}])
+tops.children.create([{name:"Tシャツ"}, {name: "ポロシャツ"}])
+pants.children.create([{name: "デニム"}, {name: "ワークパンツ"}])
 
+
+shoes, bags = mens.children.create([{name: "靴"}, {name: "バッグ"}])
+
+shoes.children.create([{name:"スニーカー"}, {name: "サンダル"}])
+bags.children.create([{name: "ショルダーバッグ"}, {name: "トートバッグ"}])

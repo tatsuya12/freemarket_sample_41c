@@ -9,7 +9,12 @@
   position: absolute;
   left: 0;
   top: 0;
-  overflow: hidden;}
+  overflow: hidden;
+  background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-hajimeru-fortune.jpg");
+  background-size: cover;
+  height: 430px;
+  width: 100%;
+}
   .sld{
     width: 100%;
     height: 390px;
@@ -66,7 +71,7 @@
     }
 
     .sld4.sld__visual {
-      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/top-banner-welcome.png");
+      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei-entertainment.png");
       height: 430px;
       width: 100%;
       background-size: cover;
@@ -84,10 +89,16 @@
   .sld_navi_circle {
     background: rgba(0,0,0,0.5);
     border-radius: 50%;
+    height: 12px;
     margin-right: 15px;
+    width: 12px;
   }
   .sld_navi_circle.current{
     background: rgba(255,255,255,1);
+    border-radius: 50%;
+    height: 12px;
+    margin-right: 15px;
+    width: 12px;
   }
   .sld_dir_btn {
     background: $white;

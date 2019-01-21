@@ -127,14 +127,14 @@
                 .pricebox
                   %yen
                     ¥
-                  = f.text_field :price, placeholder: "例）300", class: "input-price", style:"text-align: right;"
+                  = f.text_field :price, placeholder: "例）300", class: "input-price",id: 'price' , style:"text-align: right;"
           %li.price-data
             .l-left
               販売手数料 (10%)
-            .l-right -
+            .l-right.fee
           %li.price-data.bold
             .l-left 販売利益
-            .l-right -
+            .l-right.profit
       .modal{role: "dialog", tabindex: "-1"}
         .modal-inner
 

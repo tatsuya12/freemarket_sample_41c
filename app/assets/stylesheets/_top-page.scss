@@ -153,6 +153,7 @@
    }
 
    .items-box {
+    position: relative;
     text-align: center;
     height: 330px;
     width: 213px;
@@ -198,11 +199,30 @@
     }
   }
 
-  .main-image {
+.main-image {
     width: 213px;
     height: 213px;
     object-fit: cover;
-  }
+    
+}
+
+.sell-mark {
+  position: absolute;
+  border-right: 90px solid transparent;
+  border-bottom: 90px solid transparent;
+  border-left: 90px solid $red;
+  color: #fff;
+  font-size: 24px;
+}
+.SOLD {
+  position: absolute;
+  top: 27;
+  left: -100;
+  right: 10;
+  transform: rotate(-45deg);
+  font-weight: bold;
+
+}
 
 
   .footer-sell-btn {

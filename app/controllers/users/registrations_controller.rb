@@ -6,9 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    super do |resourse|
-    render :layout => './layouts/no-header&pankuzu' and return
-    end
+    super
   end
 
   # POST /resource

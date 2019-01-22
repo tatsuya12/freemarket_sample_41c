@@ -17,7 +17,7 @@ class UserStepsController < ApplicationController
   private
 
   def finish_wizard_path
-    mypage_path
+    root_path
   end
 
   # def current_user

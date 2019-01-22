@@ -28,13 +28,13 @@
         %th カテゴリー
         %td
           = link_to root_path do
-            = @item.category.name
+            = @item.category.root.name
           = link_to root_path do
             .item-detail-table-sub-category
-              = fa_icon( 'angle-right', text: " タレントグッズ", class: 'fa-fw' )
+              = fa_icon( 'angle-right', text: @item.category.parent.name, class: 'fa-fw' )
           = link_to root_path do
             .item-detail-table-sub-sub-category
-              = fa_icon( 'angle-right', text: " アイドル", class: 'fa-fw' )
+              = fa_icon( 'angle-right', text: @item.category.name, class: 'fa-fw' )
       %tr
         %th ブランド
         %td

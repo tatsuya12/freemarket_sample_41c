@@ -373,11 +373,11 @@ td {
 
 a {
   color: $blue;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 span {
@@ -395,4 +395,10 @@ span {
   }
 }
 
+// .template {
+//   display: none;
+// }
 
+// .small-categories {
+//   display: none;
+// }

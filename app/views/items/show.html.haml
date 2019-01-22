@@ -28,13 +28,13 @@
         %th カテゴリー
         %td
           = link_to root_path do
-            = @item.category.name
+            = @item.category.root.name
           = link_to root_path do
             .item-detail-table-sub-category
-              = fa_icon( 'angle-right', text: " タレントグッズ", class: 'fa-fw' )
+              = fa_icon( 'angle-right', text: @item.category.parent.name, class: 'fa-fw' )
           = link_to root_path do
             .item-detail-table-sub-sub-category
-              = fa_icon( 'angle-right', text: " アイドル", class: 'fa-fw' )
+              = fa_icon( 'angle-right', text: @item.category.name, class: 'fa-fw' )
       %tr
         %th ブランド
         %td
@@ -65,7 +65,11 @@
       = number_to_currency(@item.price, unit: "￥", precision: 0)
     %span.item-tax (税込)
     %span.item-shipping-fee 送料込み
-  = link_to "購入画面に進む", detail_item_path(@item), class: "item-buy-btn"
+  -if @item.buyer_id == nil
+    = link_to "購入画面に進む", detail_item_path(@item), class: "item-buy-btn"
+  -else
+    .sold-alert
+      売り切れました
 
   .item-description.f14
     %p.item-description__inner
@@ -92,7 +96,10 @@
       %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
       %textarea.textarea-default{name: "body", type: "text", value: ""}
       %button.message-submit.btn-default.btn-gray{type: "submit"}
-        %span コメントする
+        -if @item.buyer_id == nil
+          %span コメントする
+        -else
+          %span 売り切れのためコメントできません
 
 .nav-item-link-prev-next.clearfix
   %ul

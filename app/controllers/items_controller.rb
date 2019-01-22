@@ -2,20 +2,18 @@ class ItemsController < ApplicationController
 
   protect_from_forgery :except => [:pay]
 
-  
   def index
   	@items = Item.includes(:images).limit(4).order("created_at DESC")
-    render :layout => 'no-pankuzu'
+    render :layout => 'add-header'
   end
 
   def item_page
     @item = Item.find(params[:id])
-    render :layout => 'no-header&pankuzu'
   end
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
+    if @item.save
       redirect_to item_path(@item)
     else
       flash.now[:notice] = '商品出品に失敗しました'
@@ -25,12 +23,12 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    render :layout => 'add-header&pankuzu'
   end
 
   def edit
     @item = Item.find(params[:id])
     @images = @item.images
-    render :layout => 'no-header&pankuzu'
   end
 
   def update
@@ -44,7 +42,6 @@ class ItemsController < ApplicationController
 
   def detail
     @item = Item.find(params[:id])
-    render :layout => 'no-header&pankuzu'
   end
 
   def pay
@@ -55,13 +52,14 @@ class ItemsController < ApplicationController
       card: params['payjp-token'],
       currency: 'jpy'
     )
+    item.update( buyer_id: current_user.id )
     redirect_to action: :index
   end
 
   def destroy
     item = Item.find(params[:id])
     if item.seller_id == current_user.id
-      item.destroy!
+      item.destroy
       redirect_to root_path
     else
       render :item_page
@@ -72,12 +70,26 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    render :layout => 'no-header&pankuzu'
+    gon.large_categories = Category.roots
+
+    @midium_categories = []
+    Category.roots.each do |root_category|
+      @midium_categories << Category.children_of(root_category)
+    end
+
+    @small_categories = []
+    Category.roots.each do |root_category|
+      Category.children_of(root_category).each do |small_category|
+        @small_categories << Category.children_of(small_category)
+      end
+    end
+
   end
 
   def search
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
     @keyword = params[:keyword]
+    render :layout => 'add-header&pankuzu'
   end
 
 

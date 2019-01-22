@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
 // カテゴリーセレクト
   $('#item_category_id').change(function(event, template) {
     var val = $('#item_category_id').val();

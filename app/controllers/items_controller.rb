@@ -4,12 +4,11 @@ class ItemsController < ApplicationController
 
   def index
   	@items = Item.includes(:images).limit(4).order("created_at DESC")
-    render :layout => 'no-pankuzu'
+    render :layout => 'add-header'
   end
 
   def item_page
     @item = Item.find(params[:id])
-    render :layout => 'no-header&pankuzu'
   end
 
   def create
@@ -24,12 +23,12 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    render :layout => 'add-header&pankuzu'
   end
 
   def edit
     @item = Item.find(params[:id])
     @images = @item.images
-    render :layout => 'no-header&pankuzu'
   end
 
   def update
@@ -43,7 +42,6 @@ class ItemsController < ApplicationController
 
   def detail
     @item = Item.find(params[:id])
-    render :layout => 'no-header&pankuzu'
   end
 
   def pay
@@ -86,12 +84,12 @@ class ItemsController < ApplicationController
       end
     end
 
-    render :layout => 'no-header&pankuzu'
   end
 
   def search
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
     @keyword = params[:keyword]
+    render :layout => 'add-header&pankuzu'
   end
 
 

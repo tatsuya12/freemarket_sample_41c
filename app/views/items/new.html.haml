@@ -44,20 +44,19 @@
               必須
             .select-wrap
           %p
-            = select_tag :name, options_from_collection_for_select(Category.roots, :id, :name), class: 'select-default'
+            =f.collection_select :category_id, Category.roots, :id, :name, {}, {class: "select-default"}
+            .select-wrap
+              %p
+            - Category.roots.each do |root_category|
+              %template{id: "childrenCategoryOf#{ root_category.id }"}
+                =f.collection_select :category_id, root_category.children, :id, :name, {}, {class: "select-default midium_categories"}
+            .select-wrap
+              %p
+            - Category.roots.each do |root_category|
+              - Category.children_of(root_category).each do |midium_category|
+                %template{id: "childrenCategoryOf#{ midium_category.id }"}
+                  = f.collection_select :category_id, midium_category.children, :id, :name, {}, {class: "select-default small-categories"}
 
-            / =f.collection_select :category_id, Category.roots, :id, :name, {}, {class: "select-default"}
-            .select-wrap
-              %p
-            - Category.roots.each do |root_category|
-              = select_tag :name, options_from_collection_for_select(Category.children_of(root_category), :id, :name), class: 'select-default'
-              / =f.collection_select :category_id, Category.children_of(root_category), :id, :name, {}, {class: "select-default"}
-            .select-wrap
-              %p
-            - Category.roots.each do |root_category|
-              - Category.children_of(root_category).each do |small|
-                = select_tag :name, options_from_collection_for_select(Category.children_of(small), :id, :name), class: 'select-default'
-                / =f.collection_select :category_id, Category.children_of(small).order(:name), :id, :name, {}, {class: "select-default"}
         .form-group
           %label
             サイズ
@@ -100,6 +99,16 @@
             %i.icon-arrow-bottom
         .form-group
           %label
+            配送の方法
+            %span.form-require
+              必須
+            .select-wrap
+          %p
+            = f.select :shipping_method, [['---'], ['未定'], ['らくらくメルカリ便'], ['クロネコヤマト'], ['ゆうパック'], ['ゆうメール']], {} ,{class: "select-default"}
+            %i.icon-arrow-bottom
+
+        .form-group
+          %label
             発送元の地域
             %span.form-require
               必須
@@ -133,14 +142,14 @@
                 .pricebox
                   %yen
                     ¥
-                  = f.text_field :price, placeholder: "例）300", class: "input-price", style:"text-align: right;"
+                  = f.text_field :price, placeholder: "例）300", class: "input-price",id: 'price' , style:"text-align: right;"
           %li.price-data
             .l-left
               販売手数料 (10%)
-            .l-right -
+            .l-right.fee
           %li.price-data.bold
             .l-left 販売利益
-            .l-right -
+            .l-right.profit
       .modal{role: "dialog", tabindex: "-1"}
         .modal-inner
 

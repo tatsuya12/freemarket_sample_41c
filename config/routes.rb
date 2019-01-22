@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   delete 'sign_out', :to => 'users/sessions#destroy'
  end
 
+ resources :user_steps, only: [:index, :show, :update]
+
 
  resources :mypages do
    member do

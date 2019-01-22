@@ -94,3 +94,4 @@ gem 'enum_help'
 gem 'payjp'
 gem "jquery-rails"
 gem 'gon'
+gem "wicked"

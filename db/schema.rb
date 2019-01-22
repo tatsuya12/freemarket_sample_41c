@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115040913) do
+ActiveRecord::Schema.define(version: 20190121095451) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -38,17 +38,17 @@ ActiveRecord::Schema.define(version: 20190115040913) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "image",      limit: 65535
-    t.integer  "item_id"
+    t.text     "image",      limit: 65535, null: false
+    t.integer  "item_id",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                                       null: false
-    t.integer  "price",                                      null: false
-    t.string   "status",                        default: "", null: false
+    t.string   "name",                          null: false
+    t.integer  "price",                         null: false
+    t.string   "status",                        null: false
     t.string   "size"
     t.string   "condition"
     t.text     "introduction",    limit: 65535
@@ -79,6 +79,16 @@ ActiveRecord::Schema.define(version: 20190115040913) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "last_name"
+    t.string   "first_name"
+    t.string   "last_name_kana"
+    t.string   "first_name_kana"
+    t.string   "postcode"
+    t.string   "prefecture"
+    t.string   "city"
+    t.string   "block"
+    t.string   "building"
+    t.string   "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

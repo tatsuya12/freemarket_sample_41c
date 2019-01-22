@@ -1,11 +1,5 @@
-// $('.first').on('change',function(){
-//     $('.secont option').show();
-//     $('.second').prop('selectedIndex',$(this).prop('selectedIndex'));
-//     $('second option[value='+$(this).val()+']').hide();
-//   });
-
-$(function(){
-
+$(document).on('turbolinks:load', function(){
+// 手数料表示
   $("#price").on("keyup", function(){
     var input = $("#price").val();
     var fee = Math.round(input * 0.1);
@@ -16,6 +10,5 @@ $(function(){
 
     $('.profit').empty();
     $('.profit').append(profit);
-
   })
 })

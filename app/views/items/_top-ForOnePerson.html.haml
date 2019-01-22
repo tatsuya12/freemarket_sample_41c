@@ -1,4 +1,7 @@
 %section.items-box
+  -if item.buyer_id != nil
+    .sell-mark
+      .SOLD SOLD
   = link_to item_path(item.id) do
     .figure.items-box-photo
       - item.images.first(1).each do |image|

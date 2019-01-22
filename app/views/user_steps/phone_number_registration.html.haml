@@ -35,7 +35,7 @@
             %p.registration-content__text
               本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
             .registration-content__button
-              = f.submit value: "次へ進む"
+              = f.submit "次へ進む", data: { disable_with: "次へ進む" }
             .registration-content__bottom-text
               ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
             .registration-content__reason-link

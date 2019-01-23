@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190121095451) do
+ActiveRecord::Schema.define(version: 20190123070218) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -38,17 +38,17 @@ ActiveRecord::Schema.define(version: 20190121095451) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "image",      limit: 65535, null: false
-    t.integer  "item_id",                  null: false
+    t.text     "image",      limit: 65535
+    t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                          null: false
-    t.integer  "price",                         null: false
-    t.string   "status",                        null: false
+    t.string   "name",                                       null: false
+    t.integer  "price",                                      null: false
+    t.string   "status",                        default: "", null: false
     t.string   "size"
     t.string   "condition"
     t.text     "introduction",    limit: 65535
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20190121095451) do
     t.string   "origin_region"
     t.string   "shipping_method"
     t.string   "shipping_days"
+    t.string   "brand"
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree

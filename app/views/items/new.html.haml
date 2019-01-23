@@ -44,18 +44,18 @@
               必須
             .select-wrap
           %p
-            =f.collection_select :category_id, Category.roots, :id, :name, {}, {class: "select-default"}
+            =f.collection_select :category_id, Category.roots, :id, :name, { prompt: "------" }, {class: "select-default"}
             .select-wrap
               %p
             - Category.roots.each do |root_category|
               %template{id: "childrenCategoryOf#{ root_category.id }"}
-                =f.collection_select :category_id, root_category.children, :id, :name, {}, {class: "select-default midium_categories"}
+                =f.collection_select :category_id, root_category.children, :id, :name, { prompt: "------" }, {class: "select-default midium_categories"}
             .select-wrap
               %p
             - Category.roots.each do |root_category|
               - Category.children_of(root_category).each do |midium_category|
                 %template{id: "childrenCategoryOf#{ midium_category.id }"}
-                  = f.collection_select :category_id, midium_category.children, :id, :name, {}, {class: "select-default small-categories"}
+                  = f.collection_select :category_id, midium_category.children, :id, :name, { prompt: "------" }, {class: "select-default small-categories"}
 
         .form-group
           %label
@@ -72,8 +72,9 @@
             %span.form-gray
               任意
             .select-wrap
-          %p
-            %input.select-default
+            = f.text_field :brand, value: "", placeholder: "例）シャネル", class: "select-default brand_search"
+            .sell-brand-suggest.form-suggest-list
+
         .form-group
           %label
             商品の状態

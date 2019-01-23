@@ -72,10 +72,12 @@ class ItemsController < ApplicationController
     @item.images.build
     gon.large_categories = Category.roots
 
-    @midium_categories = []
+    midium_categories = []
     Category.roots.each do |root_category|
-      @midium_categories << Category.children_of(root_category)
+      midium_categories << Category.children_of(root_category)
     end
+    @midium_categories = midium_categories
+
 
     @small_categories = []
     Category.roots.each do |root_category|
@@ -83,7 +85,14 @@ class ItemsController < ApplicationController
         @small_categories << Category.children_of(small_category)
       end
     end
+  end
 
+  def brand_search
+    @brands = Brand.where('name LIKE(?)', "%#{params[:keyword]}%")
+     respond_to do |format|
+     format.html
+     format.json
+    end
   end
 
   def search
@@ -96,11 +105,11 @@ class ItemsController < ApplicationController
   private
 
     def item_params
-      params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image]).merge(seller_id: current_user.id)
+      params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand, :buyer_id, images_attributes: [:image]).merge(seller_id: current_user.id)
     end
 
     def update_item_params
-      params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand_id, :buyer_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
+      params.require(:item).permit(:name, :price, :status, :size, :condition, :introduction, :shipping_charge, :shipping_days, :origin_region, :shipping_method, :category_id, :brand, :buyer_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
     end
 
 end

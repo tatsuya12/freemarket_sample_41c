@@ -395,10 +395,16 @@ span {
   }
 }
 
-// .template {
-//   display: none;
-// }
-
-// .small-categories {
-//   display: none;
-// }
+.form-suggest-list {
+  overflow: auto;
+  z-index: 10;
+  max-height: 280px;
+  background: #fff;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+  list-style: none;
+  .brand-list {
+    padding: 16px 8px;
+    font-size: 14px;
+    display: list-item;
+  }
+}

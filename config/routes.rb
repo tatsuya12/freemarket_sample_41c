@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
  resources :user_steps, only: [:index, :show, :update]
 
-
  resources :mypages do
    member do
      get :credit
@@ -28,13 +27,13 @@ Rails.application.routes.draw do
    end
  end
 
-
   root 'items#index'
 
   resources :items do
     collection do
       get :sell
       get :search
+      get :brand_search
     end
 
     member do
@@ -43,5 +42,4 @@ Rails.application.routes.draw do
       post :pay
     end
   end
-
 end

@@ -658,3 +658,14 @@ test_array.each do |ele|
  end
 end
 
+agent = Mechanize.new
+page = agent.get("https://www.mercari.com/jp/brand/")
+elements = page.search('a p')
+
+elements.each do |ele|
+  ele = ele.inner_text
+  Brand.create(name: "#{ele}")
+end
+
+
+

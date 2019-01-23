@@ -1,0 +1,22 @@
+= render "users/registrations/registration_header"
+:javascript
+  $(document).ready(function () {
+    $("#registration_bar_second").css("background-color","#ea352d");
+    $("#registration_bar_third").css("background-color","#ea352d");
+    $("#registration_bar_fourth").css("background-color","#ea352d");
+    $("#registration_fifth").css("color","#ea352d");
+    $("#registration_bar_fifth").css("background-color","#ea352d");
+  });
+.single-container
+  .single-container__main
+    .single-container__main__content
+      .single-container__main__content__text
+        登録が完了しました !
+      .single-container__main__content__top-link
+        = link_to root_path do
+          トップページへ
+      .single-container__main__content__mypage-link
+        = link_to mypage_path(current_user.id) do
+          マイページへ
+
+= render "./items/purchase_footer"

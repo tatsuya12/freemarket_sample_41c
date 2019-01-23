@@ -1,0 +1,36 @@
+.single-container{
+  &__main{
+    display: block;
+    &__content{
+      width: 700px;
+      margin: 0 auto;
+      background: $white;
+      &__text{
+        font-size: 24px;
+        padding: 24px 24px;
+        line-height: 1.5;
+        text-align: center;
+        font-weight: bold;
+        color : $text-color;
+      }
+      &__top-link{
+        color: $white;
+        text-align: center;
+        display: block;
+        padding: 50px;
+        font-size: 25px;
+        border-top: 1px solid $border-color;
+      }
+      &__mypage-link{
+        color: $white;
+        text-align: center;
+        display: block;
+        font-size: 25px;
+        padding: 50px 50px 100px;
+      }
+        a{
+          text-decoration: none;
+        }
+    }
+  }
+}

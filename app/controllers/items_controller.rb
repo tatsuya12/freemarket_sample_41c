@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to item_path(@item)
     else
-      flash.now[:notice] = '商品出品に失敗しました'
+      flash.now[:alert] = '商品出品に失敗しました'
       render :new
     end
   end
@@ -90,7 +90,6 @@ class ItemsController < ApplicationController
   def brand_search
     @brands = Brand.where('name LIKE(?)', "%#{params[:keyword]}%")
      respond_to do |format|
-     format.html
      format.json
     end
   end

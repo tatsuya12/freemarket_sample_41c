@@ -1,5 +1,5 @@
 $(function(){
-	
+
 	var sld_wrap = $('#slider'),
 	sld_navi = '#sld_nav',
 	sld = '.sld',

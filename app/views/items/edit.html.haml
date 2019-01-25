@@ -15,9 +15,9 @@
           .dz-message
             .fallback
               = i.file_field :image, {class:'dropzone needsclick', id: "item-dropzone"}
-      %pre.visible-pc
-        ドラッグアンドドロップ
-        またはクリックしてファイルをアップロード
+        %pre.visible-pc
+          ドラッグアンドドロップ
+          またはクリックしてファイルをアップロード
     .sell-content
       .form-group
         %label
@@ -44,14 +44,19 @@
               必須
             .select-wrap
           %p
-            =f.collection_select :category_id, Category.roots.order(:name), :id, :name, {}, {class: "select-default"}
-            %i.icon-arrow-bottom
+            =f.collection_select :category_id, Category.roots, :id, :name, { prompt: "------" }, {class: "select-default"}
             .select-wrap
               %p
-            =f.collection_select :category_id, Category.order(:name), :id, :name, {}, {class: "select-default"}
+            - Category.roots.each do |root_category|
+              %template{id: "childrenCategoryOf#{ root_category.id }"}
+                =f.collection_select :category_id, root_category.children, :id, :name, { prompt: "------" }, {class: "select-default midium_categories"}
             .select-wrap
               %p
-            =f.collection_select :category_id, Category.order(:name), :id, :name, {}, {class: "select-default"}
+            - Category.roots.each do |root_category|
+              - Category.children_of(root_category).each do |midium_category|
+                %template{id: "childrenCategoryOf#{ midium_category.id }"}
+                  = f.collection_select :category_id, midium_category.children, :id, :name, { prompt: "------" }, {class: "select-default small-categories"}
+
         .form-group
           %label
             サイズ
@@ -67,8 +72,9 @@
             %span.form-gray
               任意
             .select-wrap
-          %p
-            %input.select-default
+            = f.text_field :brand, value: "", placeholder: "例）シャネル", class: "select-default brand_search"
+            .sell-brand-suggest.form-suggest-list
+
         .form-group
           %label
             商品の状態
@@ -92,6 +98,16 @@
           %p
             = f.select :shipping_charge, [['---'], ['送料込み(出品者負担)'], ['着払い(購入者負担)']], {} ,{class: "select-default"}
             %i.icon-arrow-bottom
+        .form-group
+          %label
+            配送の方法
+            %span.form-require
+              必須
+            .select-wrap
+          %p
+            = f.select :shipping_method, [['---'], ['未定'], ['らくらくメルカリ便'], ['クロネコヤマト'], ['ゆうパック'], ['ゆうメール']], {} ,{class: "select-default"}
+            %i.icon-arrow-bottom
+
         .form-group
           %label
             発送元の地域
@@ -127,14 +143,14 @@
                 .pricebox
                   %yen
                     ¥
-                  = f.text_field :price, placeholder: "例）300", class: "input-price", style:"text-align: right;"
+                  = f.text_field :price, placeholder: "例）300", class: "input-price",id: 'price' , style:"text-align: right;"
           %li.price-data
             .l-left
               販売手数料 (10%)
-            .l-right -
+            .l-right.fee
           %li.price-data.bold
             .l-left 販売利益
-            .l-right -
+            .l-right.profit
       .modal{role: "dialog", tabindex: "-1"}
         .modal-inner
 
@@ -154,7 +170,7 @@
               また、出品をもちまして
               =link_to "加盟店規約", ""
               に同意したことになります。
-        = f.submit "編集する", {class: 'btn-sell btn-red'}
+        = f.submit "出品する", {class: 'btn-sell btn-red'}
         .sell-btn-gray
           もどる
 = render 'purchase_footer'

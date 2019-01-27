@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "freemarket_sample_41c"
-set :repo_url, "git@github.com:erikidori/freemarket_sample_41c.git"
+set :repo_url, "git@github.com:akihiro190/freemarket_sample_41c"
 
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
@@ -18,7 +18,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/41c.pem']
+                  keys: ['~/.ssh/freemarket41c.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }

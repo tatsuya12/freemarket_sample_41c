@@ -139,10 +139,3 @@
 
 ### Association
 - belongs_to :item
-
-
-
-折りたたむ 
-メッセージ入力
-
-cチーム へのメッセージ

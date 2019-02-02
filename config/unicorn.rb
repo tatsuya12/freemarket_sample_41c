@@ -6,6 +6,7 @@ stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
 stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
 
 worker_processes 1
+working_directory rails_root
 
 listen 3000
 timeout 60

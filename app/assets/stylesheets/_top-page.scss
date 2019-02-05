@@ -15,70 +15,70 @@
   height: 430px;
   width: 100%;
 }
-  .sld{
+.sld{
+  width: 100%;
+  height: 390px;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  .sld1.sld__visual {
+    background: url("https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg");
+    height: 430px;
     width: 100%;
-    height: 390px;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    .sld1.sld__visual {
-      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg");
-      height: 430px;
-      width: 100%;
-      background-size: cover;
-      display: flex;
-      color: $text-color;
-      h2 {
-        width: 480px;
-        height: 144px;
-        display: block;
-        margin-block-start: 0.83em;
-        margin-block-end: 0.83em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        font-weight: bold;
-        font-size: 60px;
-        line-height: 1.2;
-        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-      }
-      p {
-        width: 480px;
-        height: 64px;
-        font-size: 18px;
-      }
-      img {
-        background-size: 200%;
-      }
+    background-size: cover;
+    display: flex;
+    color: $text-color;
+    h2 {
+      width: 480px;
+      height: 144px;
+      display: block;
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 1.2;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     }
-    .sld1-moji {
-      margin-left: 300px;
+    p {
+      width: 480px;
+      height: 64px;
+      font-size: 18px;
     }
-    .sld2.sld__visual{
-      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei.jpg");
-      height: 430px;
-      width: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .sld3.sld__visual {
-      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-featured-hobby.jpg");
-      height: 430px;
-      width: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .sld4.sld__visual {
-      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei-entertainment.png");
-      height: 430px;
-      width: 100%;
-      background-size: cover;
-      position: absolute;
-      background-position: center;
+    img {
+      background-size: 200%;
     }
   }
+  .sld1-moji {
+    margin-left: 300px;
+  }
+  .sld2.sld__visual{
+    background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei.jpg");
+    height: 430px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .sld3.sld__visual {
+    background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-featured-hobby.jpg");
+    height: 430px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .sld4.sld__visual {
+    background: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei-entertainment.png");
+    height: 430px;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    background-position: center;
+  }
+}
   #sld_nav{
     width: 100%;
     position: absolute;
@@ -88,14 +88,12 @@
   }
   .sld_navi_circle {
     background: rgba(0,0,0,0.5);
-    border-radius: 50%;
     height: 12px;
     margin-right: 15px;
     width: 12px;
   }
   .sld_navi_circle.current{
     background: rgba(255,255,255,1);
-    border-radius: 50%;
     height: 12px;
     margin-right: 15px;
     width: 12px;
@@ -214,7 +212,7 @@
     width: 213px;
     height: 213px;
     object-fit: cover;
-    
+
 }
 
 .sell-mark {

@@ -109,7 +109,6 @@
     background: rgba(255,255,255,1);}
     #sld_prev{
       background: url("https://www.mercari.com/jp/assets/img/common/jp/top/carousel-prev.png");
-
     }
     #sld_next{
       right: 20px;
@@ -127,11 +126,6 @@
     }
 
     .text-center {
-      a:visited {
-        text-decoration: none;
-        color:  $blue;
-      }
-
       color: $blue;
       text-decoration: none;
       text-align: center;
@@ -141,6 +135,10 @@
       margin-right: 11px;
       margin-bottom: 26px;
       margin-left: 11px;
+      a:visited {
+        text-decoration: none;
+        color:  $blue;
+      }
     }
 
     .items-box-content {

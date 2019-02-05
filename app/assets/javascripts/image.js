@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   $('input[id=item_images_attributes_0_image]').change(function() {// upするinputのID
 
     var file = $(this).prop('files')[0];

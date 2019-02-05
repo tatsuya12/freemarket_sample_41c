@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   before_action :confirm_user_id, only: [:edit, :destroy]
 
   def index
-  	@items = Item.includes(:images).limit(4).order("created_at DESC")
+    @items = Item.includes(:images).limit(4).order("created_at DESC")
     render :layout => 'add-header'
   end
 
@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to root_path
     else
       flash.now[:alert] = '商品出品に失敗しました'
       render :new

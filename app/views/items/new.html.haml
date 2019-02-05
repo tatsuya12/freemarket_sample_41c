@@ -14,10 +14,12 @@
         = f.fields_for :images do |i|
           .dz-message
             .fallback
-              = i.file_field :image, {class:'dropzone needsclick', id: "item-dropzone"}
-        %pre.visible-pc
-          ドラッグアンドドロップ
-          またはクリックしてファイルをアップロード
+              =i.label :image, class: "image-uploader-filed" do
+                = i.file_field :image, {class:'dropzone needsclick', style: "display: none"}
+                #photo_view
+                %pre.visible-pc
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをアップロード
     .sell-content
       .form-group
         %label

@@ -395,6 +395,31 @@ span {
   }
 }
 
+.image-uploader-filed {
+  width: 100%;
+  height: 162px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+#photo_view {
+  background-size: cover;
+  height: 120px;
+  width: 120px;
+  top: 20px;
+  left: 20px;
+  position: absolute;
+  float: right;
+}
+
+.dz-message {
+  background-size: cover;
+  height: 162px;
+  width: 620px;
+  display: block;
+}
+
 .form-suggest-list {
   overflow: auto;
   z-index: 10;

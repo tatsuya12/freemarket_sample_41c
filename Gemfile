@@ -95,4 +95,3 @@ gem 'payjp'
 gem "jquery-rails"
 gem 'gon'
 gem "wicked"
-gem 'mechanize'

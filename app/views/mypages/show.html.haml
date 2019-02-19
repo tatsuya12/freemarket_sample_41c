@@ -3,9 +3,9 @@
   = render './items/side-bar'
   .l-content-mypage
     %section.mypage-user-icon
-      =link_to root_path do
+      =link_to '/' do
         %figure
-          =image_tag("//static-mercari-jp-imgtr2.akamaized.net/thumb/members/209996436.jpg?1467039374", width: "60")
+          =image_tag("/mypage_icon.png", width: "60")
         %h2.bold
           =@nickname
         .mypage-number
@@ -72,7 +72,7 @@
             =image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4136293187")
           %li.mypage-item-not-found.bold
             現在、やることリストはありません
-      
+
       %li.mypage-go-list
         .mypage-go-list-link
           =link_to "一覧を見る", "/jp/mypage/purchased/"
@@ -83,7 +83,7 @@
           %input#treading{checked: "checked", name: "t-tab_item", type: "radio"}/
           %label.t-tab_item{for: "treading"} 取引中
           %input#treaded{name: "t-tab_item", type: "radio"}/
-          %label.t-tab_item{for: "treaded"} 過去の取引 
+          %label.t-tab_item{for: "treaded"} 過去の取引
           #treading_content.tab_content
             .merukariicon
               =image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4136293187")
